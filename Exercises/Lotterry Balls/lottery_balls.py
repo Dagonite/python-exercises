@@ -9,8 +9,8 @@ chosen_balls.sort()
 
 print(
     "Your chosen balls are:",
-    "".join(
-        str(ball) + " - " if i < len(chosen_balls) - 1 else str(ball)
+    " - ".join(
+        str(ball) if i < len(chosen_balls) - 1 else str(ball)
         for i, ball in enumerate(chosen_balls)
     ),
 )
