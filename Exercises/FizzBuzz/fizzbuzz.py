@@ -1,5 +1,5 @@
 # fizzbuzz.py
-"""Write a function that prints out FizzBuzz (1 - 100) up to range."""
+"""Write a function that prints out FizzBuzz (1 - 100)."""
 
 
 def fizzbuzz(x):
