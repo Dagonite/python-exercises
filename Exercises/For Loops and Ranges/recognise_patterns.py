@@ -1,4 +1,13 @@
 # recognise_patterns.py
+"""Given a pattern followed by text blobs split by "|". Create a function which returns a string showing the number of 
+times the pattern is present in each blob and the total number of matches at the end.
+
+Input:
+"cc;cc|ccc|cac|ccacc|ccbaccc"
+
+Output:
+"1|2|0|2|3|8"
+"""
 
 
 def count_occurrences(blob, pattern):
@@ -37,6 +46,7 @@ if __name__ == "__main__":
         "aa;aaaakjlhaa|aaadsaaa|easaaad|sa",
         "b;bcdefbcbebc|abcdebcfgsdf|cbdbesfbcy|1bcdef23423bc32",
         "bc;bcdefbcbebc|abcdebcfgsdf|cbdbesfbcy|1bcdef23423bc32",
+        "cc;cc|ccc|cac|ccacc|ccbaccc",
     ]
 
     answers = [
@@ -44,6 +54,7 @@ if __name__ == "__main__":
         "4|4|2|0|10",
         "4|2|3|2|11",
         "3|2|1|2|8",
+        "1|2|0|2|3|8",
     ]
 
     for i, test_case in enumerate(test_cases):
