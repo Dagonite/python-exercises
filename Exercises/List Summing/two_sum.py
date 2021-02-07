@@ -18,8 +18,23 @@ def two_sum(arr, target):
     return None
 
 
-print(two_sum([-8, -2, 2, 4, 6], 4))
-print(two_sum([-3, -1, 0, 1, 2, 5, 6], 7))
-print(two_sum([-4, -1, 3, 4, 5, 5, 6], 10))
-print(two_sum([-4, -1, 3, 4, 5], -5))
-print(two_sum([-5, -3, 3, 5, 7], 6))
+if __name__ == "__main__":
+    test_cases = [
+        ([-8, -2, 2, 4, 6], 4),
+        ([-3, -1, 0, 1, 2, 5, 6], 7),
+        ([-4, -1, 3, 4, 5, 5, 6], 10),
+        ([-4, -1, 3, 4, 5], -5),
+        ([-5, -3, 3, 5, 7], 6),
+    ]
+
+    answers = [
+        ([1, 4], -2, 6),
+        ([3, 6], 1, 6),
+        ([3, 6], 4, 6),
+        ([0, 1], -4, -1),
+        None,
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = two_sum(test_case[0], test_case[1])
+        print([answers[i] == res], res)

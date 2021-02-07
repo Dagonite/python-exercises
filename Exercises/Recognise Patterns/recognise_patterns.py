@@ -59,4 +59,4 @@ if __name__ == "__main__":
 
     for i, test_case in enumerate(test_cases):
         res = recognise_patterns(test_case)
-        print(res, answers[i] == res)
+        print([answers[i] == res], res)
