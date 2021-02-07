@@ -6,9 +6,25 @@ def number_length(num):
     return sum(1 for _ in str(num))
 
 
-print(number_length(5))
-print(number_length(12))
-print(number_length(402))
-print(number_length(1230))
-print(number_length(63464))
-print(number_length(123532))
+if __name__ == "__main__":
+    test_cases = [
+        5,
+        12,
+        402,
+        1230,
+        63464,
+        123532,
+    ]
+
+    answers = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = number_length(test_case)
+        print([answers[i] == res], res)
