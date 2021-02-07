@@ -1,6 +1,6 @@
-# add_names_to_dict.py
-"""Given three arguments ⁠— a dictionary "obj", a key "name", and a "value" ⁠— return a dictionary with that name and 
-value in it (as key-value pairs)."""
+# add_names.py
+"""Given three arguments ⁠(a dictionary "obj", a key "name", and a "value") return a dictionary with that name and value 
+in it (as key-value pairs)."""
 
 
 def add_name(obj, name, value):

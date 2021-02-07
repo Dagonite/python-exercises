@@ -1,5 +1,5 @@
 # is_sastry.py
-"""Establish if a given integer n is a Sastry number. If the number resulting from the concatenation of an integer n 
+"""Establish if a given integer, n, is a Sastry number. If the number resulting from the concatenation of an integer n 
 with its successor is a perfect square, then n is a Sastry Number. Given a positive integer n, implement a function that 
 returns True if n is a Sastry number, or False if it's not.
 

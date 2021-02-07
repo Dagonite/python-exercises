@@ -1,7 +1,6 @@
 # odd_numbers.py
 """Print all odd numbers between 1 and 100 on separate lines."""
 
-
 list_of_numbers = list(range(1, 101))
 
 # using modulus

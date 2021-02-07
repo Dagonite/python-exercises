@@ -1,5 +1,5 @@
-# draw_cards_using_a_set.py
-"""Make a standard deck of cards and draw two cards at random. Print the two cards."""
+# draw_cards_using_set.py
+"""Make a standard deck of cards using a set and draw two cards at random. Print the two cards."""
 
 RANKS = ("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace")
 SUITS = ("Diamonds", "Hearts", "Clubs", "Spades")
