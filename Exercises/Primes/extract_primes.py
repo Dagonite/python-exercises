@@ -20,13 +20,29 @@ def extract_primes(num):
         if num_str[j] != "0"
     ]
 
-    # check if subnumbers are in primes set
+    # return sorted subnumbers which are in primes set
     return sorted([n for n in subnums if n in primes])
 
 
-print(extract_primes(17))
-print(extract_primes(14972))
-print(extract_primes(103))
-print(extract_primes(80))
-print(extract_primes(0))
-print(extract_primes(2))
+if __name__ == "__main__":
+    test_cases = [
+        17,
+        14972,
+        103,
+        80,
+        0,
+        2,
+    ]
+
+    answers = [
+        [7, 17],
+        [2, 7, 97, 149],
+        [3, 103],
+        [],
+        [],
+        [2],
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = extract_primes(test_case)
+        print("[Pass]" if answers[i] == res else "[Fail]", res)

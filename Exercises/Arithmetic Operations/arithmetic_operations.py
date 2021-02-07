@@ -15,8 +15,23 @@ def arithmetic_operation(equation):
         return -1
 
 
-print(arithmetic_operation("11 + 10"))
-print(arithmetic_operation("8 - 4"))
-print(arithmetic_operation("6 * 7"))
-print(arithmetic_operation("24 // 8"))
-print(arithmetic_operation("5 // 0"))
+if __name__ == "__main__":
+    test_cases = [
+        ("11 + 10"),
+        ("8 - 4"),
+        ("6 * 7"),
+        ("24 // 8"),
+        ("5 // 0"),
+    ]
+
+    answers = [
+        21,
+        4,
+        42,
+        3,
+        -1,
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = arithmetic_operation(test_case)
+        print("[Pass]" if answers[i] == res else "[Fail]", res)

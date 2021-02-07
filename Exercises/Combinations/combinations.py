@@ -10,6 +10,21 @@ def combinations(*items):
     return reduce(lambda x, y: (1 if not x else x) * (1 if not y else y), items)
 
 
-print(combinations(2, 0, 6, 0, 5))
-print(combinations(0, 2, 3, 4, 0, 5))
-print(combinations(2, 3, 1, 0, 2, 5, 9, 0))
+if __name__ == "__main__":
+    test_cases = [
+        (2, 0, 6, 0, 5),
+        (0, 2, 3, 4, 0, 5),
+        (2, 3, 1, 0, 2, 5, 9, 0),
+        (2, 3, 6, 5, 3, 4, 1, 1, 2),
+    ]
+
+    answers = [
+        60,
+        120,
+        540,
+        4320,
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = combinations(*test_case)
+        print("[Pass]" if answers[i] == res else "[Fail]", res)

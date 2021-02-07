@@ -1,21 +1,37 @@
 # validate_pin.py
-"""Create a function to test if a string is a valid pin or not. A valid pin has:
--Exactly 4 or 6 characters
--Only numerical characters (0-9)
--No whitespace
-"""
+"""Create a function to test if a string is a valid pin or not. A valid pin has exactly 4 or 6 characters, only 
+numerical characters (0-9), and no whitespace."""
 
 
 def valid(txt):
     return txt.isnumeric() and len(txt) in [4, 6]
 
 
-print(valid("1422"))
-print(valid("abcd"))
-print(valid("14ab"))
-print(valid("14225"))
-print(valid("ab14c"))
-print(valid("abcde"))
-print(valid("234133"))
-print(valid("abcdef"))
-print(valid("14ab15"))
+if __name__ == "__main__":
+    test_cases = [
+        "1422",
+        "abcd",
+        "14ab",
+        "ab14c",
+        "14225",
+        "abcde",
+        "234133",
+        "abcdef",
+        "14ab15",
+    ]
+
+    answers = [
+        True,
+        False,
+        False,
+        False,
+        False,
+        False,
+        True,
+        False,
+        False,
+    ]
+
+    for i, test_case in enumerate(test_cases):
+        res = valid(test_case)
+        print("[Pass]" if answers[i] == res else "[Fail]", res)
