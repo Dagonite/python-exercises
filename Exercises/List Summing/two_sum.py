@@ -15,7 +15,7 @@ def two_sum(arr, target):
             right -= 1
         else:
             return [left, right], arr[left], arr[right]
-    return None
+    return
 
 
 if __name__ == "__main__":
