@@ -79,8 +79,7 @@ def draw_hexagon():
 def test_marks():
     marks = []
     while True:
-        mark = input("\nEnter a mark ('q' to quit): ")
-        mark = mark.replace(" ", "")
+        mark = input("\nEnter a mark ('q' to quit): ").strip()
         if mark == "" or mark[0] == "q":
             break
         elif mark.isdigit():
