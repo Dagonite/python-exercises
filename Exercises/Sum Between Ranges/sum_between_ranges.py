@@ -4,18 +4,23 @@ if x is 1 and y is 5, then sum 1+2+3+4+5."""
 
 
 # imperatively
-def sum_between_two_ints(x, y):
+def sbti_imp(x, y):
     total = 0
     for n in range(x, y + 1):
         total += n
     return total
 
 
-# reduce and lambda
-def sbti(x, y):
+# using reduce and lambda
+def sbti_reduce(x, y):
     from functools import reduce
 
     return reduce(lambda n, m: n + m, range(x, y + 1))
+
+
+# using sum()
+def sbti_sum(x, y):
+    return sum([n for n in range(x, y + 1)])
 
 
 if __name__ == "__main__":
@@ -33,10 +38,15 @@ if __name__ == "__main__":
 
     print("Imperatively:")
     for i, test_case in enumerate(test_cases):
-        res = sum_between_two_ints(test_case[0], test_case[1])
+        res = sbti_imp(test_case[0], test_case[1])
         print([answers[i] == res], res)
 
-    print("\nReduce and lambda:")
+    print("\nUsing Reduce and lambda:")
     for i, test_case in enumerate(test_cases):
-        res = sbti(test_case[0], test_case[1])
+        res = sbti_reduce(test_case[0], test_case[1])
+        print([answers[i] == res], res)
+
+    print("\nUsing sum():")
+    for i, test_case in enumerate(test_cases):
+        res = sbti_sum(test_case[0], test_case[1])
         print([answers[i] == res], res)
