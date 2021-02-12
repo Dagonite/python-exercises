@@ -1,13 +1,14 @@
-# 2. Create a class called ”Rectangle”. The object should be created with a height and
-# width which are passed as parameters to the constructor __init__(self, height, width).
-# The user will require three things to be calculated:
+# rectangle.py
+# fmt: off
 
-# the area calculate_area(self);
-# the perimeter calculate_perimeter(self);
-# and the diagonal length between opposing corners calculate_diagonal_length(self);
+"""2. Create a class called ”Rectangle”. The object should be created with a height and width which are passed as 
+parameters to the constructor __init__(self, height, width). The user will require three things to be calculated:
 
-# Also a method which will print all the information relating to the rectangle
-# retrieve_information(self).
+-the area calculate_area(self);
+-the perimeter calculate_perimeter(self);
+-and the diagonal length between opposing corners calculate_diagonal_length(self);
+
+Also a method which will print all the information relating to the rectangle retrieve_information(self)."""
 class Rectangle:
     def __init__(self, height, width):
         self.height = height

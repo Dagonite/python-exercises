@@ -1,19 +1,20 @@
-# 10. You have been asked by the library to create a borrower class. The first name,
-# last name, borrower number, and maximum number of books they can loan should be set
-# when the object is created. The library would like the object to hold the following
-# information:
+# borrower.py
+# fmt: off
 
-# • first name
-# • last name
-# • borrower number
-# • maximum number of books which can be loaned
-# • the number of books currently on loan (assume this to be 0 initially)
-# • the outstanding fine accrued by the borrower (assume this to be 0 initially)
+"""10. You have been asked by the library to create a borrower class. The first name, last name, borrower number, and 
+maximum number of books they can loan should be set when the object is created. The library would like the object to 
+hold the following information:
 
-# The library need to be able to increase the maximum number of books the person can
-# loan, loan books to the person, return books, associate a fine with the borrower,
-# record that the borrower has paid some of their fine, and print the information held
-# about the borrower.
+-first name
+-last name
+-borrower number
+-maximum number of books which can be loaned
+-the number of books currently on loan (assume this to be 0 initially)
+-the outstanding fine accrued by the borrower (assume this to be 0 initially)
+
+The library need to be able to increase the maximum number of books the person can loan, loan books to the person, 
+return books, associate a fine with the borrower, record that the borrower has paid some of their fine, and print the 
+information held about the borrower."""
 class Borrower:
     borrower_number = 0
     max_no_of_loans = 5
