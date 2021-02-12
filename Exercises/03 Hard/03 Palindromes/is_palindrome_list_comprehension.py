@@ -7,5 +7,5 @@ lines = in_file.readlines()
 in_file.close()
 
 for line in lines:
-    s = "".join([ch for ch in line if ch.isalnum()]).replace(" ", "").lower()
+    s = "".join([ch for ch in line if ch.isalnum()]).strip().lower()
     print("{:<34}{}".format(line[:-1], s == s[::-1]))
