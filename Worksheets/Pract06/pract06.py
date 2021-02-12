@@ -424,16 +424,12 @@ def draw_arrow(win, arrow_x, arrow_y):
     arrow_shaft.setFill("brown")
     arrow_shaft.draw(win)
 
-    fletching = Line(
-        Point(arrow_x + 0.02, arrow_y + 0.02), Point(arrow_x - 0.02, arrow_y - 0.02)
-    )
+    fletching = Line(Point(arrow_x + 0.02, arrow_y + 0.02), Point(arrow_x - 0.02, arrow_y - 0.02))
     fletching.setWidth(2)
     fletching.setFill("gray")
     fletching.draw(win)
 
-    fletching = Line(
-        Point(arrow_x + 0.02, arrow_y - 0.02), Point(arrow_x - 0.02, arrow_y + 0.02)
-    )
+    fletching = Line(Point(arrow_x + 0.02, arrow_y - 0.02), Point(arrow_x - 0.02, arrow_y + 0.02))
     fletching.setWidth(2)
     fletching.setFill("gray")
     fletching.draw(win)
