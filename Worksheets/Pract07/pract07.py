@@ -1,4 +1,5 @@
 # Practical Worksheet 7: Using Booleans and While Loops
+# fmt: off
 
 import random
 import time
@@ -9,95 +10,23 @@ from pract05 import distance_between_points, draw_brown_eye, draw_circle
 from pract06 import calculate_grade
 
 
-# basic operators examples
-def add_digits():
-    number = input("Enter a number: ")
-    x = 0
-    for y in number:
-        x = x + int(y)
-    print(x)
-
-
-def mult(a, b):
-    total = 0
-    for _ in range(a):
-        total += b
-    return total
-
-
-def add_up_numbers1():
-    total = 0
-    more_numbers = "y"
-    while more_numbers == "y":
-        number = eval(input("Enter a number "))
-        total += number
-        more_numbers = input("Any more numbers? ")
-    print("The total is", total)
-
-
-def add_up_numbers2():
-    total = 0
-    number = eval(input("Number (0 to stop): "))
-    while number != 0:
-        total = total + number
-        number = eval(input("Number (0 to stop): "))
-    print("The total is", total)
-
-
-def add_up_numbers3():
-    total = 0
-    n_str = input("Number (return to stop): ")
-    while n_str != "":
-        number = eval(n_str)
-        total += number
-        n_str = input("Number (return to stop): ")
-    print("The total is", total)
-
-
-# note the need for "len(string) == 0" to appear twice
-def get_string1():
-    string = ""
-    while len(string) == 0:
-        string = input("Enter a non-empty string: ")
-        if len(string) == 0:
-            print("You didn't enter anything!")
-    return string
-
-
-# The same validation example, this time using the loop-and-a-half pattern.
-def get_string2():
-    while True:
-        string = input("Enter a non-empty string: ")
-        if len(string) > 0:
-            break
-        print("You didn't enter anything!")
-    return string
-
-
-# 1. Write a get_name function that reads a person’s name from the user. Assume that a
-# valid name is any string of alphabetic characters only, such as “Jenny”. If the user
-# enters an invalid name, the function should continue to ask the user for a name until
-# she/he enters a valid one. Once a valid name has been entered, this should be
-# returned. (Hint: use the isalpha method discussed above.)
+"""1. Write a get_name() function that reads a person’s name from the user. Assume that a valid name is any string of 
+alphabetic characters only, such as “Jenny”. If the user enters an invalid name, the function should continue to ask the 
+user for a name until she/he enters a valid one. Once a valid name has been entered, this should be returned (Hint: use 
+the isalpha method discussed above)."""
 def get_name():
     while True:
-        name = input("Enter your name: ")
+        name = input("\nEnter your name: ")
         if name.isalpha():
             break
         print("The name must contain only alphabetic characters!")
     return name
 
 
-# 2. The file pract07.py includes an incomplete traffic_lights function that draws a set
-# of traffic lights, with all lights off (i.e. black). Fill in the body of the while
-# loop at the bottom of this function so that it will continuously cycle through the
-# standard red → red/amber → green → amber → red sequence, simulating a real set of
-# traffic lights. Use “yellow” for amber, and add realistic delays between light changes
-# using the sleep function from the time module. E.g.,
-#    import time
-#    time.sleep(5)
-
-# will cycle twice and then close.
+"""2. The file pract07.py includes an incomplete traffic_lights() function that draws a set of traffic lights, with all 
+lights off (i.e. black). Fill in the body of the while loop at the bottom of this function so that it will continuously 
+cycle through the standard red → red/amber → green → amber → red sequence, simulating a real set of traffic lights. Use 
+“yellow” for amber, and add realistic delays between light changes using the sleep function from the time module."""
 def traffic_lights():
     win = GraphWin("Traffic light")
     red = Circle(Point(100, 50), 20)
@@ -111,13 +40,13 @@ def traffic_lights():
     green.draw(win)
     start = time.time()
     while True:
-        time.sleep(5)
+        time.sleep(4)
         amber.setFill("yellow")
         time.sleep(2)
         red.setFill("black")
         amber.setFill("black")
         green.setFill("green")
-        time.sleep(5)
+        time.sleep(4)
         amber.setFill("yellow")
         green.setFill("black")
         time.sleep(2)
@@ -128,36 +57,31 @@ def traffic_lights():
             break
 
 
-# 3. In pract06, you wrote a calculate_grade function that returned a grade for a
-# pupil’s coursework based on a mark. Write a function grade_coursework that asks the
-# user for a mark and, using a call to calculate_grade, displays a “The pupil achieved a
-# grade of ...” message including the grade achieved. The function should only display a
-# grade for valid marks (i.e. between 0 and 20) – if the user enters an invalid mark,
-# they should be re-prompted until they enter a valid one.
+"""3. In pract06, you wrote a calculate_grade() function that returned a grade for a pupil’s coursework based on a mark. 
+Write a function grade_coursework that asks the user for a mark and, using a call to calculate_grade, displays a “The 
+pupil achieved a grade of ...” message including the grade achieved. The function should only display a grade for valid 
+marks (i.e. between 0 and 20) – if the user enters an invalid mark, they should be re-prompted until they enter a valid 
+one."""
 def grade_coursework():
     mark = ""
     while not mark.isdigit():
-        mark = input("Enter your mark: ")
+        mark = input("\nEnter your mark: ")
     grade = calculate_grade(eval(mark))
-    print("The pupil acheived a grade of", grade)
+    print("You acheived a grade of", grade)
 
 
-# 4. Write an order_price function that works out the price of an order of goods. The
-# function should repeatedly ask the user for (i) the unit price of a product in the
-# order, (ii) the quantity of that product in the order, and (iii) whether there are any
-# more products in the order. When the user has completed entering prices & quantities,
-# the function should output a message containing the total order price to 2 decimal
-# places.
+"""4. Write an order_price() function that works out the price of an order of goods. The function should repeatedly ask 
+the user for (i) the unit price of a product in the order, (ii) the quantity of that product in the order, and (iii) 
+whether there are any more products in the order. When the user has completed entering prices & quantities, the function 
+should output a message containing the total order price to 2 decimal places."""
 def order_price():
     total = 0
     quantity = 0
     while True:
-        unit_price = eval(input("Enter the unit price of a product (0 to " "stop): "))
+        unit_price = eval(input("\nEnter the unit price of a product (0 to " "stop): "))
 
         while unit_price > 0:
-            quantity = round(
-                eval(input("Enter the quantity of the product (0 " "to stop): "))
-            )
+            quantity = round(eval(input("Enter the quantity of the product (0 " "to stop): ")))
 
             if quantity > 0:
                 break
@@ -174,13 +98,11 @@ def order_price():
         print("The order price is £{:.2f}".format(total))
 
 
-# 5. Write a clickable_eye function which draws a brown eye of radius 100 (note: I've
-# set my own coords so this will be different) within a graphics window of sufficient
-# size. The function should then respond to each user click on the eye by displaying
-# (underneath the eye) the name of the part of the eye clicked on (i.e. one of “pupil”,
-# “iris”, “sclera” (or “white”)). The user should be able to finish (i.e. close the
-# window) by clicking on any point outside the eye. (Hint: use your draw_brown_eye and
-# distance_between_points functions from pract05.py.)
+"""5. Write a clickable_eye() function which draws a brown eye of radius 100 (note: I've set my own coords so this will 
+be different) within a graphics window of sufficient size. The function should then respond to each user click on the 
+eye by displaying (underneath the eye) the name of the part of the eye clicked on (i.e. one of “pupil”, “iris”, “sclera” 
+(or “white”)). The user should be able to finish (i.e. close the window) by clicking on any point outside the eye (Hint: 
+use your draw_brown_eye() and distance_between_points() functions from pract05.py.)"""
 def clickable_eye():
     win = GraphWin("Clickable eye", 800, 800)
     win.setCoords(0, 0, 1, 1)
@@ -211,12 +133,10 @@ def clickable_eye():
             zone_text.setText("Pupil")
 
 
-# 6. The pract07.py file contains functions fahrenheit_to_celsius and
-# celsius_to_fahrenheit for converting between temperature units. Using calls to these
-# two functions, write a temperature_converter function that provides a text-based
-# interface which allows the user to (repeatedly) convert temperature values until
-# he/she wishes to stop. The user should be asked which way the conversion should be
-# performed separately for each conversion.
+"""6. The pract07.py file contains functions fahrenheit_to_celsius() and celsius_to_fahrenheit() for converting between 
+temperature units. Using calls to these two functions, write a temperature_converter function that provides a text-based
+interface which allows the user to (repeatedly) convert temperature values until he/she wishes to stop. The user should 
+be asked which way the conversion should be performed separately for each conversion."""
 def fahrenheit_to_celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
 
@@ -227,10 +147,7 @@ def celsius_to_fahrenheit(celsius):
 
 def temperature_converter():
     while True:
-        conv_type = input(
-            "\nEnter 'ftc' for Fahrenheit-to-Celcius, 'ctf' for "
-            "Celsius-to-Fahrenheit, or 'q' to quit: "
-        ).lower()
+        conv_type = input("\nEnter 'ftc' for Fahrenheit-to-Celcius, 'ctf' for Celsius-to-Fahrenheit, or 'q' to quit: ").lower()
         if conv_type == "ftc" or conv_type == "ctf":
             while True:
                 temperature = input(
@@ -254,26 +171,24 @@ def temperature_converter():
             continue
 
 
-# 7. Write a guess_the_number function. The function should generate a random number
-# between 1 and 100 (using randint from the random module) and then allow the user to
-# guess the number. After each incorrect guess, it should display “Too high” or
-# “Too low” as appropriate. If the user guesses the number within seven guesses, it
-# should display a “You win!” message saying how many guesses it took. After seven
-# incorrect guesses, the function should display a “You lose! – the number was . . . ”
-# message.
+"""7. Write a guess_the_number() function. The function should generate a random number between 1 and 100 (using randint 
+from the random module) and then allow the user to guess the number. After each incorrect guess, it should display “Too 
+high” or “Too low” as appropriate. If the user guesses the number within seven guesses, it should display a “You win!” 
+message saying how many guesses it took. After seven incorrect guesses, the function should display a “You lose! – the 
+number was . . . ” message."""
 def guess_the_number():
     random_n = random.randint(1, 100)
     for i in range(1, 8):
         while True:
-            guess = input("Guess the number: ")
+            guess = input("\nGuess the number: ")
             if guess.isdigit():
                 guess = int(guess)
                 if guess == 0 or guess > 100:
-                    print("Error: Value out of range\n")
+                    print("Error: Value out of range")
                 else:
                     break
             else:
-                print("Error: Invalid value\n")
+                print("Error: Invalid value")
 
         if guess == random_n:
             if i == 1:
@@ -282,19 +197,18 @@ def guess_the_number():
                 print(f"You win! It took you {i} guesses")
             break
         if guess > random_n:
-            print("Too high\n")
+            print("Too high")
         if guess < random_n:
-            print("Too low\n")
+            print("Too low")
         if i == 7:
             print(f"You lose, the random number was {random_n}")
 
 
-# 8. Write a table_tennis_scorer function that allows the user to keep track of the
-# points of two players in a game of table tennis. In table tennis, the first player to
-# reach 11 points wins the game; however, a game must be won by at least a two point
-# margin. The points for the players should be displayed on two halves of a graphics
-# window, and the user clicks anywhere on the appropriate side to increment a player’s
-# score. As soon as one player has won, a “wins” message should appear on that side.
+"""8. Write a table_tennis_scorer() function that allows the user to keep track of the points of two players in a game 
+of table tennis. In table tennis, the first player to reach 11 points wins the game; however, a game must be won by at 
+least a two point margin. The points for the players should be displayed on two halves of a graphics window, and the 
+user clicks anywhere on the appropriate side to increment a player’s score. As soon as one player has won, a “wins” 
+message should appear on that side."""
 def table_tennis_scorer():
     win = GraphWin("Table tennis scorer", 500, 500)
     win.setCoords(0, 0, 1, 1)
@@ -338,17 +252,15 @@ def table_tennis_scorer():
     win.close()
 
 
-# 9. [harder] Write a function clickable_box_of_eyes that takes two parameters columns
-# and rows, and displays a rows × columns grid of blue eyes (all of radius 50) within a
-# box (rectangle). There should be a border of size 50 between the box and the edge of
-# the window. For each click of the mouse inside the box, the function should behave as
-# follows: if the click is on an eye, the row and column of that eye should be displayed
-# in the space below the box, for example as shown below given the click denoted by the
-# dot (note that row and column numbers should begin at 1.)
+"""9. [harder] Write a function clickable_box_of_eyes() that takes two parameters columns and rows, and displays a 
+rows × columns grid of blue eyes (all of radius 50) within a box (rectangle). There should be a border of size 50 
+between the box and the edge of the window. For each click of the mouse inside the box, the function should behave as 
+follows: if the click is on an eye, the row and column of that eye should be displayed in the space below the box, for 
+example as shown below given the click denoted by the dot (Note: row and column numbers should begin at 1).
 
-# If the user clicks within the box but not on an eye, the displayed message should be
-# “Between eyes”. The window should close when the user clicks outside the box.
-def clickable_box_of_eyes(cols, rows):
+If the user clicks within the box but not on an eye, the displayed message should be “Between eyes”. The window should 
+close when the user clicks outside the box."""
+def clickable_box_of_eyes(cols=8, rows=4):
     b_and_cols = cols + 1  # columns plus border
     b_and_rows = rows + 1  # rows plus border
     win = GraphWin("Clickable box of eyes", 100 * b_and_cols, 100 * b_and_rows)
@@ -385,20 +297,16 @@ def draw_blue_eye(win, centre, radius):
     draw_circle(win, centre, radius / 4, "black")
 
 
-# 10. [harder] Write a find_the_circle function to play a simple game. This should start
-# by displaying a graphics window, and creating (but not displaying) a circle of radius
-# 30 at a random position (use the randint function from the random module). The user
-# should then have 10 attempts at locating the circle (by clicking on the graphics
-# window). Each time (except the first) the user misses the circle, a “getting closer”
-# or “getting further away” message should be displayed (depending on the position of
-# the current and previous clicks). If the user manages to find the circle (by clicking
-# within its circumference), then the circle should be displayed and the user given some
-# points: 10 points for finding it with the first click, down to 1 point for finding it
-# with the 10th click. The game then restarts. However, each time the game restarts the
-# circle should be given a new random position and its radius reduced by 10%. The game
-# ends when the user fails to find the circle within 10 clicks. The total number of
-# points scored should then be displayed (note: game is too hard with radius 30 circle
-# so I've upped it to 60).
+"""10. [harder] Write a find_the_circle() function to play a simple game. This should start by displaying a graphics 
+window, and creating (but not displaying) a circle of radius 30 at a random position (use the randint function from the 
+random module). The user should then have 10 attempts at locating the circle (by clicking on the graphics window). Each 
+time (except the first) the user misses the circle, a “getting closer” or “getting further away” message should be 
+displayed (depending on the position of the current and previous clicks). If the user manages to find the circle (by 
+clicking within its circumference), then the circle should be displayed and the user given some points: 10 points for 
+finding it with the first click, down to 1 point for finding it with the 10th click. The game then restarts. However, 
+each time the game restarts the circle should be given a new random position and its radius reduced by 10%. The game 
+ends when the user fails to find the circle within 10 clicks. The total number of points scored should then be displayed 
+(Note: game is too hard with radius 30 circle so I've upped it to 60)."""
 def find_the_circle():
     win = GraphWin("Find the circle", 300, 440)
     score, radius, loss = 0, 60, False
@@ -407,9 +315,7 @@ def find_the_circle():
     divider.setFill("gray")
     divider.draw(win)
 
-    warning_text = Text(
-        Point(150, 330), "Click in the space\nabove this grey " "rectangle"
-    )
+    warning_text = Text(Point(150, 330), "Click in the space\nabove this grey " "rectangle")
     warning_text.setSize(12)
     warning_text.setStyle("bold")
     warning_text.draw(win)
@@ -498,3 +404,36 @@ def find_the_circle():
     points_text.setText(f"Your score is {score}")
     time.sleep(4)
     win.close()
+
+
+if __name__ == "__main__":
+    functions = [
+        get_name,
+        traffic_lights,
+        grade_coursework,
+        order_price,
+        clickable_eye,
+        temperature_converter,
+        guess_the_number,
+        table_tennis_scorer,
+        clickable_box_of_eyes,
+        find_the_circle,
+    ]
+
+    no_of_functions = len(functions)
+
+    while True:
+        try:
+            f_number = int(input("\nEnter the question number you would like to demo (0 to quit): "))
+            if f_number == 0:
+                break
+            elif f_number < 0 or f_number > no_of_functions:
+                print("Answer out of range!")
+            else:
+                function = functions[f_number - 1]
+                res = function()
+                if res is not None:
+                    print()
+                    print(res)
+        except:
+            print("Invalid input!")

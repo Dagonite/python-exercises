@@ -1,13 +1,15 @@
+# street.py
+# fmt: off
+
 from random import random
 
 from graphics import GraphWin, Point, Polygon, Rectangle, Text
 
 
-# 6. Write a new program street.py which draws a whole street (i.e. row) of houses like
-# those in the original house.py program. The user should input the number of houses,
-# the height of the graphics window, the (shared) door colour and the probability that
-# any light is on. The houses should be numbered (on their doors) starting from 1, and
-# the houses should fill the graphics window.
+"""6. Write a new program street.py which draws a whole street (i.e. row) of houses like those in the original house.py 
+program. The user should input the number of houses, the height of the graphics window, the (shared) door colour and the 
+probability that any light is on. The houses should be numbered (on their doors) starting from 1, and the houses should 
+fill the graphics window."""
 def main():
     houses, size, door_colour, prob = get_inputs()
     draw_houses(houses, size, door_colour, prob)
@@ -30,8 +32,7 @@ def get_inputs():
             print("Error: Input is not an integer")
 
     while True:
-        size = input("\nEnter the size of the graphics window: ")
-        size = size.replace(" ", "")
+        size = input("\nEnter the size of the graphics window: ").strip()
         if size.isdigit():
             size = int(size)
             if size > 10:
@@ -100,16 +101,9 @@ def draw_house(win, door_colour, lights_on, n, size):
     roof.draw(win)
 
     # draw wall and door
-    draw_rectangle(
-        win, Point(n * size + 0.008, 0.008), Point(size * (n + 1) - 0.008, 0.7), "brown"
-    )
+    draw_rectangle(win, Point(n * size + 0.008, 0.008), Point(size * (n + 1) - 0.008, 0.7), "brown")
 
-    draw_rectangle(
-        win,
-        Point(n * size + 0.15 * size, 0.008),
-        Point(size * (n + 1) - 0.6 * size, 0.45),
-        door_colour,
-    )
+    draw_rectangle(win, Point(n * size + 0.15 * size, 0.008), Point(size * (n + 1) - 0.6 * size, 0.45), door_colour)
 
     # draw door number
     door_n = Text(Point(n * size + 0.275 * size, 0.35), n + 1)
@@ -123,12 +117,7 @@ def draw_house(win, door_colour, lights_on, n, size):
         window_colour = "yellow"
     else:
         window_colour = "black"
-    draw_rectangle(
-        win,
-        Point(n * size + 0.55 * size, 0.15),
-        Point(size * (n + 1) - 0.15 * size, 0.45),
-        window_colour,
-    )
+    draw_rectangle(win, Point(n * size + 0.55 * size, 0.15), Point(size * (n + 1) - 0.15 * size, 0.45), window_colour)
 
 
 def draw_rectangle(win, point1, point2, colour):

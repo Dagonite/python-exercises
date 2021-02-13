@@ -348,7 +348,7 @@ def archery_game():
 
     h_wind, v_wind = random.uniform(-wsd, wsd), random.uniform(-wsd, wsd)
 
-    for arrow in range(5):
+    for _ in range(5):
         wth = 0.08  # wind threshold
         wind = ""
 

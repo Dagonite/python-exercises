@@ -1,3 +1,6 @@
+# randomwalks2d.py
+# fmt: off
+
 from random import random
 
 from graphics import Point
@@ -5,15 +8,13 @@ from graphics import Point
 from pract05 import distance_between_points
 
 
-# 3. Modify the original one-dimensional random walk program described in this worksheet
-# to give a two-dimensional random walk program randomwalks2d.py. In this program,
-# instead of taking steps forwards and backwards, steps can be made in any direction:
-# north, east, south and west (with equal probability). The program should report the
-# expected distance from the starting point. (Hint: Make sure that the probability of
-# stepping in each direction is equal (i.e. 1/4). You might try to count the total
-# number of steps made in each direction to ensure that this is the case with your
-# program. Your program will probably include a function distance_between_points(x1, y1,
-# x2, y2) to calculate the distances from the start point.)
+"""3. Modify the original one-dimensional random walk program described in this worksheet to give a two-dimensional 
+random walk program randomwalks2d.py. In this program, instead of taking steps forwards and backwards, steps can be made 
+in any direction: north, east, south and west (with equal probability). The program should report the expected distance 
+from the starting point. (Hint: Make sure that the probability of stepping in each direction is equal (i.e. 1/4). You 
+might try to count the total number of steps made in each direction to ensure that this is the case with your program. 
+Your program will probably include a function distance_between_points(x1, y1, x2, y2) to calculate the distances from 
+the start point)."""
 def main():
     num_walks, num_steps = get_inputs()
     average_steps = take_walks(num_walks, num_steps)
@@ -28,7 +29,7 @@ def get_inputs():
 
 def take_walks(num_walks, num_steps):
     total_steps = 0
-    for walk in range(num_walks):
+    for _ in range(num_walks):
         steps_away = take_a_walk(num_steps)
         total_steps = total_steps + steps_away
     return total_steps / num_walks
@@ -37,7 +38,7 @@ def take_walks(num_walks, num_steps):
 def take_a_walk(num_steps):
     horizontal_steps = 0
     vertical_steps = 0
-    for step in range(num_steps):
+    for _ in range(num_steps):
         random_step = random()
         if random_step < 0.25:
             vertical_steps += 1
@@ -55,10 +56,7 @@ def take_a_walk(num_steps):
 
 
 def print_expected_distance(average_steps):
-    print(
-        "The expected number of steps away from the "
-        "start point is {:.2f}".format(average_steps)
-    )
+    print("The expected number of steps away from the start point is {:.2f}".format(average_steps))
 
 
 main()

@@ -1,3 +1,6 @@
+# graphicalwalks.py
+# fmt: off
+
 from random import random
 
 from graphics import Circle, GraphWin, Line, Point
@@ -5,15 +8,12 @@ from graphics import Circle, GraphWin, Line, Point
 from pract05 import distance_between_points
 
 
-# 4. Write another random walk program graphicalwalks.py that graphically simulates two
-# dimensional random walks. Each walk should end when the walker is a specified distance
-# way from the start point. The program should begin by asking the user for this
-# distance and the number of walks to simulate. It should then draw a circle in the
-# centre of a graphics window showing the boundary of the walking area. The route of
-# each random walk should be traced out starting from the centre point. Use a black line
-# of length 5 for each step of the walk. (Hint: the step lines should fill out the
-# circle evenly – if all the walks tend to head in one general direction then you have
-# made a mistake.)
+"""4. Write another random walk program graphicalwalks.py that graphically simulates two dimensional random walks. Each 
+walk should end when the walker is a specified distance way from the start point. The program should begin by asking the 
+user for this distance and the number of walks to simulate. It should then draw a circle in the centre of a graphics 
+window showing the boundary of the walking area. The route of each random walk should be traced out starting from the 
+centre point. Use a black line of length 5 for each step of the walk (Hint: the step lines should fill out the circle 
+evenly – if all the walks tend to head in one general direction then you have made a mistake)."""
 def main():
     num_walks, distance = get_inputs()
     win = draw_window(distance)
@@ -22,8 +22,7 @@ def main():
 
 def get_inputs():
     while True:
-        num_walks = input("Enter the number of random walks: ")
-        num_walks = num_walks.replace(" ", "")
+        num_walks = input("Enter the number of random walks: ").strip()
 
         if num_walks.isdigit():
             break
@@ -47,7 +46,7 @@ def draw_window(distance):
 
 
 def take_walks(win, num_walks, distance):
-    for walk in range(num_walks):
+    for _ in range(num_walks):
         take_a_walk(win, distance)
 
 
@@ -74,7 +73,6 @@ def take_a_walk(win, distance):
 
         current_pos = Point(current_x, current_y)
         steps_away = distance_between_points(start, current_pos)
-        # print(f"Stepping {step}: {steps_away:.2f} steps away")
 
         if steps_away >= distance:
             colour = "red"
