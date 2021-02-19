@@ -15,7 +15,4 @@ def primes_sieve(limit):
                 a[n] = False
 
 
-primes = primes_sieve(10000)
-
-for n in primes:
-    print(n)
+print(list(primes_sieve(10000)))
