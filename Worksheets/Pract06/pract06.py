@@ -321,10 +321,10 @@ def archery_game():
 
     grades = [
         "amazing at this game",
-        "pretty good at this",
-        "average at this",
-        "below average at this",
-        "awful at this",
+        "pretty good at this game",
+        "average at this game",
+        "below average at this game",
+        "awful at this game",
     ]
 
     score = 0
@@ -345,11 +345,12 @@ def archery_game():
 
     wsd = 0.25  # wind start deviation
     wd = 0.1  # wind deviation per arrow
+    wth = 0.08  # wind threshold
+    arrows = 5  # number of arrows to shoot
 
     h_wind, v_wind = random.uniform(-wsd, wsd), random.uniform(-wsd, wsd)
 
-    for _ in range(5):
-        wth = 0.08  # wind threshold
+    for _ in range(arrows):
         wind = ""
 
         if v_wind > wth:
@@ -404,13 +405,12 @@ def archery_game():
         grade = 4
 
     grade_text = grades[grade]
-    wind_text.setText("You scored {}, meaning you're " "{}".format(score, grade_text))
+    wind_text.setText("You scored {}, meaning you're {}".format(score, grade_text))
 
     score_text.setSize(10)
-    score_text.setText("Click anywhere on the target to play again\nClick " "anywhere else to quit")
+    score_text.setText("Click on the target to play again\nClick anywhere else to quit")
     choice = win.getMouse()
-    choice_x = choice.getX()
-    choice_y = choice.getY()
+    choice_x, choice_y = choice.getX(), choice.getY()
 
     if distance_between_points(Point(choice_x, choice_y), Point(0.5, 0.5)) <= 0.3:
         win.close()
@@ -424,15 +424,11 @@ def draw_arrow(win, arrow_x, arrow_y):
     arrow_shaft.setFill("brown")
     arrow_shaft.draw(win)
 
-    fletching = Line(Point(arrow_x + 0.02, arrow_y + 0.02), Point(arrow_x - 0.02, arrow_y - 0.02))
-    fletching.setWidth(2)
-    fletching.setFill("gray")
-    fletching.draw(win)
-
-    fletching = Line(Point(arrow_x + 0.02, arrow_y - 0.02), Point(arrow_x - 0.02, arrow_y + 0.02))
-    fletching.setWidth(2)
-    fletching.setFill("gray")
-    fletching.draw(win)
+    for x in (1, -1):
+        fletching = Line(Point(arrow_x + 0.02, arrow_y + 0.02 * x), Point(arrow_x - 0.02, arrow_y - 0.02 * x))
+        fletching.setWidth(2)
+        fletching.setFill("gray")
+        fletching.draw(win)
 
 
 if __name__ == "__main__":
