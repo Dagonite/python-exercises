@@ -4,7 +4,7 @@
 Coordinates within a graphics window can be transformed like so:
 
 win = GraphWin("Coordinate transformations", 330, 160)
-    win.setCoords(0, 0, 1, 1)
+win.setCoords(0, 0, 1, 1)
 """
 
 import math
