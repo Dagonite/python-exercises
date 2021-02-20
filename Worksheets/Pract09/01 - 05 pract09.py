@@ -96,7 +96,7 @@ the following output:
     #   #
     #
 """
-def draw_bar_chart(numbers):
+def draw_bar_chart(numbers=[4,5,1,2,3,8]):
     print()
     largest_number = max(numbers)
     for row_count in range(largest_number):
