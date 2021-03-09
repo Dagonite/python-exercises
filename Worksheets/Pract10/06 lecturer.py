@@ -36,10 +36,9 @@ class Lecturer:
         )
 
 
-lecturer1 = Lecturer(
-    "John", "Doe", 70000, ["Robotics", "Databases", "Machine learning"]
-)
-lecturer1.add_unit("Network security")
-lecturer1.remove_unit("Databases")
-lecturer1.give_pay_rise(5)
-print(lecturer1.print_lecturer_information())
+if __name__ == "__main__":
+    lecturer1 = Lecturer("John", "Doe", 70000, ["Robotics", "Databases", "Machine learning"])
+    lecturer1.add_unit("Network security")
+    lecturer1.remove_unit("Databases")
+    lecturer1.give_pay_rise(5)
+    print(lecturer1.print_lecturer_information())

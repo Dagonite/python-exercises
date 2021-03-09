@@ -66,4 +66,5 @@ def print_steps(squares, steps, total_steps):
         print("{:4}{:9}".format(square, steps[square - 1]))
 
 
-main()
+if __name__ == "__main__":
+    main()

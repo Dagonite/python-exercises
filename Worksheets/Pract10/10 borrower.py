@@ -67,29 +67,30 @@ class Borrower:
         )
 
 
-borrower1 = Borrower("John", "Doe")
-for _ in range(6):
+if __name__ == "__main__":
+    borrower1 = Borrower("John", "Doe")
+    for _ in range(6):
+        borrower1.loan_book()
+    borrower1.increase_max_book_loan(1)
     borrower1.loan_book()
-borrower1.increase_max_book_loan(1)
-borrower1.loan_book()
-borrower1.loan_book()
-borrower1.return_book()
-borrower1.return_book()
-borrower1.add_fine(6.99)
-borrower1.add_fine(4.99)
-borrower1.reduce_fine(11.00)
+    borrower1.loan_book()
+    borrower1.return_book()
+    borrower1.return_book()
+    borrower1.add_fine(6.99)
+    borrower1.add_fine(4.99)
+    borrower1.reduce_fine(11.00)
 
-print()
+    print()
 
-borrower2 = Borrower("Mary", "Sue")
-borrower2.increase_max_book_loan(5)
-for _ in range(8):
-    borrower2.loan_book()
-borrower2.return_book()
-borrower2.return_book()
-borrower2.add_fine(4.00)
-borrower2.reduce_fine(5.00)
-borrower2.reduce_fine(4.00)
+    borrower2 = Borrower("Mary", "Sue")
+    borrower2.increase_max_book_loan(5)
+    for _ in range(8):
+        borrower2.loan_book()
+    borrower2.return_book()
+    borrower2.return_book()
+    borrower2.add_fine(4.00)
+    borrower2.reduce_fine(5.00)
+    borrower2.reduce_fine(4.00)
 
-print(borrower1.retrieve_borrower_information())
-print(borrower2.retrieve_borrower_information())
+    print(borrower1.retrieve_borrower_information())
+    print(borrower2.retrieve_borrower_information())

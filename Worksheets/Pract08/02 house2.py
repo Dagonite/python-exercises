@@ -59,4 +59,5 @@ def draw_rectangle(win, point1, point2, colour):
     rectangle.draw(win)
 
 
-main()
+if __name__ == "__main__":
+    main()

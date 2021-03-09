@@ -13,5 +13,6 @@ class Coin:
         return "Heads" if random() < 0.5 else "Tails"
 
 
-coin1 = Coin(1)
-print(coin1.flip_coin())
+if __name__ == "__main__":
+    coin1 = Coin(1)
+    print(coin1.flip_coin())

@@ -86,4 +86,5 @@ def draw_walk(win, start, current_pos, colour):
     line.draw(win)
 
 
-main()
+if __name__ == "__main__":
+    main()

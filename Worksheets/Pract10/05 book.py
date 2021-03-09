@@ -41,8 +41,9 @@ class Book:
         )
 
 
-book1 = Book("Nineteen Eighty-Four", "George Orwell", 328, 9780141393049, 7.99)
-book1.change_price(6.99)
-book1.restock(30)
-book1.sell_copy()
-print(book1.retrieve_book_information())
+if __name__ == "__main__":
+    book1 = Book("Nineteen Eighty-Four", "George Orwell", 328, 9780141393049, 7.99)
+    book1.change_price(6.99)
+    book1.restock(30)
+    book1.sell_copy()
+    print(book1.retrieve_book_information())

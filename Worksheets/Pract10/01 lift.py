@@ -42,6 +42,7 @@ class Lift:
             self.go_down(floor_called_from)
 
 
-lift1 = Lift(10)
-print("Lift called to floor 5")
-lift1.call_lift(5)
+if __name__ == "__main__":
+    lift1 = Lift(10)
+    print("Lift called to floor 5")
+    lift1.call_lift(5)

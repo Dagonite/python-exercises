@@ -59,4 +59,5 @@ def print_expected_distance(average_steps):
     print("The expected number of steps away from the start point is {:.2f}".format(average_steps))
 
 
-main()
+if __name__ == "__main__":
+    main()

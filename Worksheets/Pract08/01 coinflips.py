@@ -43,4 +43,5 @@ def display_results(heads, tails):
     print("Heads {:.2f}, Tails {:.2f} ".format(heads, tails))
 
 
-main()
+if __name__ == "__main__":
+    main()

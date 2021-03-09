@@ -92,4 +92,5 @@ def print_summary(set_wins, sets):
     print("Proportion: {:.2f}".format(proportion))
 
 
-main()
+if __name__ == "__main__":
+    main()

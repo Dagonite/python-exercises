@@ -55,15 +55,16 @@ class BagOfChange:
         return f"Sum of coins in bag: £{value/100:.2f}"
 
 
-bag1 = BagOfChange(2, 3, 1, 4, 2, 5, 11, 3)
-print(bag1.total_value())
-bag1.remove_coin(5)
-bag1.remove_coin(8)
-bag1.remove_coin(5)
-bag1.remove_coin(20)
-bag1.remove_coin(20)
-bag1.add_coin(20)
-bag1.add_coin(18)
-bag1.add_coin(100)
-print(bag1.total_no_coins())
-print(bag1.total_value())
+if __name__ == "__main__":
+    bag1 = BagOfChange(2, 3, 1, 4, 2, 5, 11, 3)
+    print(bag1.total_value())
+    bag1.remove_coin(5)
+    bag1.remove_coin(8)
+    bag1.remove_coin(5)
+    bag1.remove_coin(20)
+    bag1.remove_coin(20)
+    bag1.add_coin(20)
+    bag1.add_coin(18)
+    bag1.add_coin(100)
+    print(bag1.total_no_coins())
+    print(bag1.total_value())

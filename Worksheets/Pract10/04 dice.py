@@ -18,21 +18,22 @@ class Dice:
         return choice(self.side_labels)
 
 
-dice1 = Dice([1, 2, 3, 4, 5, 6])
-print("Die 1 has", dice1.sides, "sides")
-for i in range(5):
-    print("Roll", str(i + 1) + ":", dice1.throw_dice())
+if __name__ == "__main__":
+    dice1 = Dice([1, 2, 3, 4, 5, 6])
+    print("Die 1 has", dice1.sides, "sides")
+    for i in range(5):
+        print("Roll", str(i + 1) + ":", dice1.throw_dice())
 
-print()
+    print()
 
-dice2 = Dice([3, 3, 4, 4, 5, 6])
-print("Die 2 has", dice2.sides, "sides")
-for i in range(5):
-    print("Roll", str(i + 1) + ":", dice2.throw_dice())
+    dice2 = Dice([3, 3, 4, 4, 5, 6])
+    print("Die 2 has", dice2.sides, "sides")
+    for i in range(5):
+        print("Roll", str(i + 1) + ":", dice2.throw_dice())
 
-print()
+    print()
 
-dice3 = Dice(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"])
-print("Die 3 has", dice3.sides, "sides")
-for i in range(5):
-    print("Roll", str(i + 1) + ":", dice3.throw_dice())
+    dice3 = Dice(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"])
+    print("Die 3 has", dice3.sides, "sides")
+    for i in range(5):
+        print("Roll", str(i + 1) + ":", dice3.throw_dice())

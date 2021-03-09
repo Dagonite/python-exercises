@@ -40,4 +40,5 @@ def simulate_steps(cols, rows):
     print(grid)
 
 
-simulate_steps(9, 9)
+if __name__ == "__main__":
+    simulate_steps(9, 9)

@@ -33,10 +33,11 @@ class Rectangle:
         )
 
 
-rect1 = Rectangle(5, 8)
-print("Rectangle 1:")
-print(rect1.retrieve_information())
-print()
-rect2 = Rectangle(3, 11)
-print("Rectangle 2:")
-print(rect2.retrieve_information())
+if __name__ == "__main__":
+    rect1 = Rectangle(5, 8)
+    print("Rectangle 1:")
+    print(rect1.retrieve_information())
+    print()
+    rect2 = Rectangle(3, 11)
+    print("Rectangle 2:")
+    print(rect2.retrieve_information())

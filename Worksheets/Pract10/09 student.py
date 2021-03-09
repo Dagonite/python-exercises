@@ -66,10 +66,11 @@ class Student:
         )
 
 
-student1 = Student("John", "Doe", "Law")
-student1.change_course("Computer Science")
-student1.withdraw_student()
-student1.withdraw_student()
-student1.unwithdraw_student()
-student1.unwithdraw_student()
-print(student1.retrieve_student_information())
+if __name__ == "__main__":
+    student1 = Student("John", "Doe", "Law")
+    student1.change_course("Computer Science")
+    student1.withdraw_student()
+    student1.withdraw_student()
+    student1.unwithdraw_student()
+    student1.unwithdraw_student()
+    print(student1.retrieve_student_information())
