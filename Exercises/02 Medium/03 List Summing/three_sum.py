@@ -16,7 +16,7 @@ def three_sum(arr, target):
                 right -= 1
             else:
                 return [i, left, right], (n, arr[left], arr[right])
-    return
+    return None
 
 
 if __name__ == "__main__":
