@@ -5,19 +5,14 @@ once, every occurance should be listed. If no prime numbers are found, return an
 
 
 def extract_primes(num):
-    # set of numbers from 2 to num
     primes = set(range(2, num + 1))
     for i in range(2, int(num ** 0.5 + 1)):
-        # remove multiples of current prime from the set
-        primes -= set(range(i * 2, num + 1, i))
+        primes -= set(range(i * 2, num + 1, i))  # remove multiples of i from the set
 
     # list of representations of num
     num_str = str(num)
     subnums = [
-        int(num_str[j : j + i + 1])
-        for i in range(len(num_str))
-        for j in range(len(num_str) - i)
-        if num_str[j] != "0"
+        int(num_str[j : j + i + 1]) for i in range(len(num_str)) for j in range(len(num_str) - i) if num_str[j] != "0"
     ]
 
     # return sorted subnumbers which are in primes set
@@ -32,6 +27,7 @@ if __name__ == "__main__":
         80,
         0,
         2,
+        28521,
     ]
 
     answers = [
@@ -41,6 +37,7 @@ if __name__ == "__main__":
         [],
         [],
         [2],
+        [2, 2, 5, 521, 8521],
     ]
 
     for i, test_case in enumerate(test_cases):
