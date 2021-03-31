@@ -12,7 +12,7 @@ for n in list_of_numbers:
         total += n
 print(total)
 
-# using := to assign to variables within an expression
+# using := to assign to a variable within an expression
 total = 0
 [total := total + n for n in list_of_numbers if n % 2]
 print(total)
