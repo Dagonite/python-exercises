@@ -11,9 +11,9 @@ def compute_closest_to_zero(ts):
             abs_closest = abs(closest)
             abs_t = abs(t)
             if abs_t < abs_closest:
-                closest = t  # if current t is closer to 0 than closest, make it new closest
+                closest = t  # if t is closer to 0 than closest, set closest as t
             elif abs_t == abs_closest and t != closest:
-                closest = abs_t  # if current t and closest have same abs but are different, make closest abs_t
+                closest = abs_t  # if t and closest have same abs but are different, set closest to abs_t
         return closest
     except:
         return 0  # return 0 if ts empty
