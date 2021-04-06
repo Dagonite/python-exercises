@@ -6,13 +6,17 @@ returned. For example, if the input is -5 and 5, then 5 must be returned."""
 
 def compute_closest_to_zero(ts):
     try:
-        ts.sort(reverse=True)  # sort the list in descending order
-        absolute_ts = [abs(t) for t in ts]  # create a list of absolute ts values
-        min_t = min(absolute_ts)  # find the min t in ts
-        min_t_index = absolute_ts.index(min_t)  # find the first index of min t
-        return ts[min_t_index]
+        closest = ts[0]  # set closest to first value in ts
+        for t in ts:  # iterate over values in ts
+            abs_closest = abs(closest)
+            abs_t = abs(t)
+            if abs_t < abs_closest:
+                closest = t  # if current t is closer to 0 than closest, make it new closest
+            elif abs_t == abs_closest and t != closest:
+                closest = abs_t  # if current t and closest have same abs but are different, make closest abs_t
+        return closest
     except:
-        return 0
+        return 0  # return 0 if ts empty
 
 
 if __name__ == "__main__":
@@ -24,6 +28,8 @@ if __name__ == "__main__":
         [-10, -10],
         [],
         [15, -7, 9, 14, 7, 12],
+        [11, -11, 13, 13, 12, 11, -5, 5, 5, 21, 32, 30, -9, 20, -8, 11, 15, 11, -8, 3, 4, -5, -6, 7],
+        [18, -1, -15, 11, 18, 2, 1, -8, 5, 5, 35, 32, -5, -9, 18],
     ]
 
     answers = [
@@ -34,6 +40,8 @@ if __name__ == "__main__":
         -10,
         0,
         7,
+        3,
+        1,
     ]
 
     for i, test_case in enumerate(test_cases):
