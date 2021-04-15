@@ -50,9 +50,9 @@ if __name__ == "__main__":
     ]
 
     answers = [
-        19,
-        13,
-        28,
+        19,  # 2 4 4 2 1 2 4
+        13,  # 0 1 0 1 0 9 2
+        28,  # 0 4 3 1 8 6 6
     ]
 
     for i, test_case in enumerate(test_cases):
