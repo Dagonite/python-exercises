@@ -7,7 +7,4 @@ BALLS = range(1, 61)
 chosen_balls = sample(BALLS, 6)
 chosen_balls.sort()
 
-print(
-    "Your chosen balls are:",
-    " - ".join(str(ball) for ball in chosen_balls),
-)
+print("Your chosen balls are:", " - ".join(str(ball) for ball in chosen_balls))
