@@ -3,7 +3,7 @@
 
 from random import sample
 
-BALLS = range(1, 61)
+BALLS = range(1, 60)
 chosen_balls = sample(BALLS, 6)
 chosen_balls.sort()
 
