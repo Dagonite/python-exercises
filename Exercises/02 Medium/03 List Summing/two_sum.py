@@ -1,6 +1,6 @@
 # two_sum.py
-"""Write a program that finds two numbers in a sorted array that sums to a target. If no combination exists, return 
-None."""
+"""Write a program that finds the index of two numbers in a sorted array that sum to a target. If no combination exists, 
+return [-1, -1, -1]."""
 
 
 def two_sum(arr, target):
@@ -14,8 +14,8 @@ def two_sum(arr, target):
         elif total > target:
             right -= 1
         else:
-            return [left, right], arr[left], arr[right]
-    return
+            return [left, right]
+    return [-1, -1, -1]
 
 
 if __name__ == "__main__":
@@ -28,11 +28,11 @@ if __name__ == "__main__":
     ]
 
     answers = [
-        ([1, 4], -2, 6),
-        ([3, 6], 1, 6),
-        ([3, 6], 4, 6),
-        ([0, 1], -4, -1),
-        None,
+        [1, 4],
+        [3, 6],
+        [3, 6],
+        [0, 1],
+        [-1, -1, -1],
     ]
 
     for i, test_case in enumerate(test_cases):

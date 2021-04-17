@@ -1,6 +1,6 @@
 # three_sum.py
-"""Write a program that finds three numbers in a sorted array that sums to a target. If no combination exists, return 
-None."""
+"""Write a program that finds the index of three numbers in a sorted array that sum to a target. If no combination 
+exists, return [-1, -1, -1]."""
 
 
 def three_sum(arr, target):
@@ -15,8 +15,8 @@ def three_sum(arr, target):
             elif total > adjusted_target:
                 right -= 1
             else:
-                return [i, left, right], (n, arr[left], arr[right])
-    return None
+                return [i, left, right]
+    return [-1, -1, -1]
 
 
 if __name__ == "__main__":
@@ -29,11 +29,11 @@ if __name__ == "__main__":
     ]
 
     answers = [
-        ([0, 1, 2], (1, 2, 2)),
-        ([0, 4, 5], (1, 6, 11)),
-        ([3, 6, 7], (6, 7, 17)),
-        ([1, 4, 7], (2, 12, 20)),
-        None,
+        [0, 1, 2],
+        [0, 4, 5],
+        [3, 6, 7],
+        [1, 4, 7],
+        [-1, -1, -1],
     ]
 
     for i, test_case in enumerate(test_cases):
