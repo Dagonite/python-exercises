@@ -13,8 +13,6 @@ combinations = []
 for i in range(len(min(a, b, c))):
     sorted_combination = sorted((a[i], b[i], c[i]))
 
-    if sorted_combination in combinations:
-        continue  # ignore combination if it is already in combinations
-
-    combinations.append(sorted_combination)
-    print(f"{a[i]:<7}{b[i]:<7}{c[i]}")
+    if sorted_combination not in combinations:
+        combinations.append(sorted_combination)
+        print(f"{a[i]:<7}{b[i]:<7}{c[i]}")
