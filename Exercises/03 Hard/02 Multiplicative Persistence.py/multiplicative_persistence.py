@@ -1,9 +1,8 @@
 # multiplicative_persistence.py
-
 """Write a function that takes in a positive integer and returns its multiplicative persistence, which is the number of 
 times you must multiply the digits in the integer until you reach a single digit. For example the integer 39 returns 3. 
-You get this by taking 39 and multiplying its digits 3*9 which equals 27. You then multiply 27's digits 2*7 = 14. Lastly 
-1*4 = 4 which is a single digit. You had to multiply 3 times so you return 3. The integer 999 would return 4."""
+You get this by taking 39 and multiplying its digits 3*9 which equals 27. You then multiply 27's digits, 2*7 = 14. 
+Lastly, 1*4 = 4 which is a single digit. You had to multiply 3 times so you return 3. The integer 999 would return 4."""
 
 
 def multiplicative_persistence(n):
