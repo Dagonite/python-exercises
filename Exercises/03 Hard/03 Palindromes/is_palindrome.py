@@ -1,7 +1,6 @@
 # is_palindrome.py
-"""Checks if a string is a palindrome in linear time. Works by using two iterators, one at the beginning of the string 
-and one at the end of the string. The iterators work their way towards eachother, ignoring non-alphanumeric characters 
-along the way."""
+"""Write a function which takes a string as an argument. The function should return True if the string is an alpha-
+numeric palindrome, else False."""
 
 
 def is_palindrome_1(line):
