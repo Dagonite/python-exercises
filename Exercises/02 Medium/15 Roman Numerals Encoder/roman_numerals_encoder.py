@@ -4,6 +4,9 @@ representation of that integer."""
 
 
 def roman_numerals_encoder(n):
+    if n > 3999:
+        return None
+
     SYMBOLS = {
         "I": 1,
         "IV": 4,
