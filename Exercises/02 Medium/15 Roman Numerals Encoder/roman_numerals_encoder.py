@@ -23,10 +23,11 @@ def roman_numerals_encoder(n):
     line = ""
 
     for symbol in reversed(SYMBOLS):
-        quotient = n // SYMBOLS[symbol]
+        symbol_value = SYMBOLS[symbol]
+        quotient = n // symbol_value
         no_of_symbol = min(3, quotient)
         line += symbol * no_of_symbol
-        n -= no_of_symbol * SYMBOLS[symbol]
+        n -= no_of_symbol * symbol_value
 
     return line
 
