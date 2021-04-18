@@ -7,32 +7,30 @@ def roman_numerals_encoder(n):
     if n > 3999:
         return None
 
-    SYMBOLS = {
-        "I": 1,
-        "IV": 4,
-        "V": 5,
-        "IX": 9,
-        "X": 10,
-        "XL": 40,
-        "L": 50,
-        "XC": 90,
-        "C": 100,
-        "CD": 400,
-        "D": 500,
-        "CM": 900,
-        "M": 1000,
+    ROMAN_NUMERALS = {
+        1000: "M",
+        900: "CM",
+        500: "D",
+        400: "CD",
+        100: "C",
+        90: "XC",
+        50: "L",
+        40: "XL",
+        10: "X",
+        9: "IX",
+        5: "V",
+        4: "IV",
+        1: "I",
     }
 
-    line = ""
+    roman_string = ""
 
-    for symbol in reversed(SYMBOLS):
-        symbol_value = SYMBOLS[symbol]
-        quotient = n // symbol_value
-        no_of_symbol = min(3, quotient)
-        line += symbol * no_of_symbol
-        n -= no_of_symbol * symbol_value
+    for key in sorted(ROMAN_NUMERALS.keys(), reverse=True):
+        while n >= key:
+            roman_string += ROMAN_NUMERALS[key]
+            n -= key
 
-    return line
+    return roman_string
 
 
 if __name__ == "__main__":
