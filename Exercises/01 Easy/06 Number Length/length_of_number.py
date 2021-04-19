@@ -1,5 +1,5 @@
 # length_of_number.py
-"""Create a function that takes a number and returns its length without using the len function."""
+"""Create a function that takes a number and returns its length without using the len() function."""
 
 
 def number_length(num):
