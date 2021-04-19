@@ -36,4 +36,4 @@ print(total)
 print(reduce(lambda n, m: n + m if m % 2 else n, numbers))
 
 # using the range object's stop attribute value in a formula
-print(((numbers.stop) // 2) ** 2)
+print((numbers.stop // 2) ** 2)
