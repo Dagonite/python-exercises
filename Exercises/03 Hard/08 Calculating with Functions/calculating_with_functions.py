@@ -39,11 +39,11 @@ def seven(op=identity):
 
 
 def eight(op=identity):
-    return 8 if not op else op(8)
+    return op(8)
 
 
 def nine(op=identity):
-    return 9 if not op else op(9)
+    return op(9)
 
 
 def plus(x):
