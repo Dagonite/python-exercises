@@ -24,7 +24,7 @@ print(sum(n for n in range(1, 100, 2)))
 # using sum, filter, lambda, and modulo
 print(sum(filter(lambda n: n % 2, numbers)))
 
-# using augmented assignment and modulo
+# using assignment expression and modulo
 total = 0
 [total := total + n for n in numbers if n % 2]
 print(total)
