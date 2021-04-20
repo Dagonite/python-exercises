@@ -1,7 +1,7 @@
 # combinations.py
 """Create a function that takes a variable number of arguments, each argument representing the number of items in a 
 group, and returns the number of permutations (combinations) of items that you could get by taking one item from each 
-group. Input may include the number zero."""
+group. Some groups may contain 0 items, in which case ignore them."""
 
 from functools import reduce
 
