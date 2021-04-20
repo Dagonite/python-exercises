@@ -72,19 +72,19 @@ if __name__ == "__main__":
         a, b = randint(0, 9), randint(0, 9)
         operation = f"{base[a]}(plus({base[b]}()))="
         res = basef[a](plus(basef[b]()))
-        print([res == a + b], f"{operation:<30}  {res}")
+        print("[Pass]" if res == a + b else "[Fail]", f"{operation:<30}  {res}")
 
         a, b = randint(0, 9), randint(0, 9)
         operation = f"{base[a]}(minus({base[b]}()))="
         res = basef[a](minus(basef[b]()))
-        print([res == a - b], f"{operation:<30}  {res}")
+        print("[Pass]" if res == a - b else "[Fail]", f"{operation:<30}  {res}")
 
         a, b = randint(0, 9), randint(0, 9)
         operation = f"{base[a]}(times({base[b]}()))="
         res = basef[a](times(basef[b]()))
-        print([res == a * b], f"{operation:<30}  {res}")
+        print("[Pass]" if res == a * b else "[Fail]", f"{operation:<30}  {res}")
 
         a, b = randint(0, 9), randint(1, 9)
         operation = f"{base[a]}(divided_by({base[b]}()))="
         res = basef[a](divided_by(basef[b]()))
-        print([res == a // b], f"{operation:<30}  {res}")
+        print("[Pass]" if res == a // b else "[Fail]", f"{operation:<30}  {res}")
