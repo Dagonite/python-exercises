@@ -12,6 +12,12 @@ for n in numbers:
         threes.append(n)
 print(threes)
 
+# imperatively using list slicing to supply start and step args for range()
+threes = []
+for n in numbers[2::3]:
+    threes.append(n)
+print(threes)
+
 # using unpacking and list slicing to supply start and step args for range()
 print([*numbers[2::3]])
 
