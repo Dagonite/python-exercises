@@ -26,14 +26,8 @@ def is_palindrome_2(line):
     return raw_line == raw_line[::-1]
 
 
-def is_palindrome_3(line):
-    from string import punctuation
+with open("palindromes.txt", "r") as f:
+    lines = f.readlines()
 
-    raw_line = line.translate(str.maketrans("", "", punctuation)).lower().replace(" ", "").replace("\n", "")
-    return raw_line == raw_line[::-1]
-
-
-in_file = open("palindromes.txt", "r")
-for line in in_file:
-    print("{:<34}{}".format(line[:-1], is_palindrome_3(line)))
-in_file.close()
+for line in lines:
+    print("{:<34}{}".format(line[:-1], is_palindrome_2(line)))
