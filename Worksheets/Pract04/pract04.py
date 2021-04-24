@@ -68,6 +68,7 @@ def graphic_letters():
     """
     word = input("Enter a word: ")
     win = GraphWin("Letters")
+    print("Click anywhere in the graphics window to display each letter of the word")
 
     for ch in word:
         position = win.getMouse()
@@ -105,6 +106,7 @@ def exchange_table():
     justified. The pounds values should be 6 right justified and given to two decimal places (i.e. with decimal points
     lined up and with pence values after the points).
     """
+    print("{:>2} {:>3}".format("€", "£"))
     for euros in range(21):
         pounds = euros / 1.108
         print("{:>2} {:>6.2f}".format(euros, pounds))
@@ -242,8 +244,6 @@ def wc():
 
     with open(text_file, "r") as f:
         file_contents = f.read()
-
-    # print(file_contents)
 
     characters = file_contents.count("")
     print("There are", characters, "characters in", text_file)
