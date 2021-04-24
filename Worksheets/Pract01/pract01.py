@@ -105,7 +105,6 @@ if __name__ == "__main__":
     ]
 
     no_of_funcs = len(funcs)
-
     print("".join(func.__doc__ for func in funcs))
 
     while True:
