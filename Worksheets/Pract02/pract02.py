@@ -136,7 +136,7 @@ def average_of_numbers():
 
 def select_coins():
     """
-    9. [harder] Write a function select_coins() that asks the user to enter an amount of money (in pence) and then
+    9. [harder] Write a function, select_coins(), that asks the user to enter an amount of money (in pence) and then
     outputs the number of coins of each denomination (from £2 down to 1p) that should be used to make up that amount
     exactly (using the least possible number of coins). For example, if the input is 292, then the function should
     report: 1 × £2, 0 × £1, 1 × 50p, 2 × 20p, 0 × 10p, 0 × 5p, 1 × 2p, 0 × 1p. Hint: use integer division and remainder.
