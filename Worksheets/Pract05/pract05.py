@@ -5,10 +5,6 @@ import math
 from graphics import Circle, GraphWin, Line, Point, Text
 
 
-def area_of_circle(radius):
-    return math.pi * radius ** 2
-
-
 def circumference_of_circle(radius):
     """
     1. The pract05.py file contains a function area_of_circle() which has a parameter representing a circle's radius,
@@ -16,6 +12,10 @@ def circumference_of_circle(radius):
     parameter and returns the circumference of the circle.
     """
     return 2 * math.pi * radius
+
+
+def area_of_circle(radius):
+    return math.pi * radius ** 2
 
 
 def circle_info():
@@ -59,11 +59,6 @@ def draw_brown_eye_in_centre():
     win.close()
 
 
-def draw_block_of_stars(width, height):
-    for _ in range(height):
-        print("*" * width)
-
-
 def draw_letter_E():
     """
     4. Write a function draw_block_of_stars() which has two parameters width and height, and outputs a rectangle of
@@ -96,10 +91,9 @@ def draw_letter_E():
     draw_block_of_stars(10, 2)
 
 
-def draw_brown_eye(win, centre, radius):
-    draw_circle(win, centre, radius, "white")
-    draw_circle(win, centre, radius / 2, "brown")
-    draw_circle(win, centre, radius / 4, "black")
+def draw_block_of_stars(width, height):
+    for _ in range(height):
+        print("*" * width)
 
 
 def draw_pair_of_brown_eyes():
@@ -115,6 +109,12 @@ def draw_pair_of_brown_eyes():
 
     win.getMouse()
     win.close()
+
+
+def draw_brown_eye(win, centre, radius):
+    draw_circle(win, centre, radius, "white")
+    draw_circle(win, centre, radius / 2, "brown")
+    draw_circle(win, centre, radius / 4, "black")
 
 
 def distance_between_points(p1, p2):
@@ -136,14 +136,6 @@ def distance_between_points(p1, p2):
 
     distance = math.sqrt((p2X - p1X) ** 2 + (p2Y - p1Y) ** 2)
     return distance
-
-
-def draw_blocks(space1, width1, space2, width2, height):
-    for _ in range(height):
-        print(" " * space1, end="")
-        print("*" * width1, end="")
-        print(" " * space2, end="")
-        print("*" * width2)
 
 
 def draw_letter_A():
@@ -170,11 +162,18 @@ def draw_letter_A():
     **      **
     **      **
     """
-    print()
     draw_blocks(1, 8, 0, 0, 2)
     draw_blocks(0, 2, 6, 2, 2)
     draw_blocks(0, 10, 0, 0, 2)
     draw_blocks(0, 2, 6, 2, 3)
+
+
+def draw_blocks(space1, width1, space2, width2, height):
+    for _ in range(height):
+        print(" " * space1, end="")
+        print("*" * width1, end="")
+        print(" " * space2, end="")
+        print("*" * width2)
 
 
 def draw_letter_B():
@@ -243,15 +242,6 @@ def draw_four_pairs_of_brown_eyes():
     win.close()
 
 
-def display_text_with_spaces(win, line, size, y):
-    upper_line = line.upper()
-    spaced_line = upper_line.replace("", " ")[1:-1]
-    message = Text(Point(250, y), spaced_line)
-    message.setFace("courier")  # .setFace() seems to not work a lot of the time
-    message.setSize(size)
-    message.draw(win)
-
-
 def construct_vision_chart():
     """
     9. [harder] Write a display_text_with_spaces() function which will display a given string at a given point-size at a
@@ -275,27 +265,12 @@ def construct_vision_chart():
     win.close()
 
 
-def draw_stick_figure(win, position, size):
-    posX = position.getX()
-    posY = position.getY()
-
-    head = Circle(position, size)
-    head.draw(win)
-
-    body = Line(Point(posX, posY + size), Point(posX, posY + size * 3))
-    body.draw(win)
-
-    arms = Line(Point(posX - size, posY + size * 2), Point(posX + size, posY + size * 2))
-    arms.draw(win)
-
-    left_leg = Line(Point(posX, posY + size * 3), Point(posX - size, posY + size * 5))
-    left_leg.draw(win)
-
-    right_leg = Line(Point(posX, posY + size * 3), Point(posX + size, posY + size * 5))
-    right_leg.draw(win)
-
-    win.getMouse()
-    win.close()
+def display_text_with_spaces(win, line, size, y):
+    upper_line = line.upper()
+    spaced_line = upper_line.replace("", " ")[1:-1]
+    message = Text(Point(250, y), spaced_line).draw(win)
+    message.setFace("courier")
+    message.setSize(size)
 
 
 def draw_stick_figure_family():
@@ -313,6 +288,20 @@ def draw_stick_figure_family():
     draw_stick_figure(win, Point(100, 50), 20)
     draw_stick_figure(win, Point(150, 50), 18)
     draw_stick_figure(win, Point(200, 50), 15)
+
+
+def draw_stick_figure(win, position, size):
+    posX = position.getX()
+    posY = position.getY()
+
+    Circle(position, size).draw(win)
+    Line(Point(posX, posY + size), Point(posX, posY + size * 3)).draw(win)
+    Line(Point(posX - size, posY + size * 2), Point(posX + size, posY + size * 2)).draw(win)
+    Line(Point(posX, posY + size * 3), Point(posX - size, posY + size * 5)).draw(win)
+    Line(Point(posX, posY + size * 3), Point(posX + size, posY + size * 5)).draw(win)
+
+    win.getMouse()
+    win.close()
 
 
 if __name__ == "__main__":
