@@ -289,5 +289,5 @@ if __name__ == "__main__":
                 funcs[func_number - 1]()
             else:
                 raise ValueError
-        except:
+        except Exception:
             print("Invalid input")
