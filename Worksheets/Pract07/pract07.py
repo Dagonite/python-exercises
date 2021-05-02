@@ -71,7 +71,7 @@ def grade_coursework():
     """
     mark = ""
     while not mark.isdigit():
-        mark = input("\nEnter your mark: ")
+        mark = input("Enter your mark: ")
     grade = calculate_grade(eval(mark))
     print("You acheived a grade of", grade)
 
@@ -91,10 +91,10 @@ def order_price():
     total = 0
     quantity = 0
     while True:
-        unit_price = eval(input("\nEnter the unit price of a product (0 to " "stop): "))
+        unit_price = float(input("Enter the unit price of a product (0 to " "stop): "))
 
         while unit_price > 0:
-            quantity = round(eval(input("Enter the quantity of the product (0 " "to stop): ")))
+            quantity = int(input("Enter the quantity of the product (0 " "to stop): "))
 
             if quantity > 0:
                 break
@@ -197,7 +197,7 @@ def guess_the_number():
     random_n = random.randint(1, 100)
     for i in range(1, 8):
         while True:
-            guess = input("\nGuess the number: ")
+            guess = input("Guess the number: ")
             if guess.isdigit():
                 guess = int(guess)
                 if guess == 0 or guess > 100:
