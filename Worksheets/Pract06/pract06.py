@@ -275,8 +275,8 @@ def archery_game():
 
     Each time the user clicks, the function should:
 
-    (i) display a small black circle representing where the arrow hits,
-    (ii) record the number of points scored.
+    (i) display a small black circle representing where the arrow hits
+    (ii) record the number of points scored
 
     The points awarded for each arrow (click) are as follows: 10 for the yellow area, 5 for red and 2 for blue. After
     the final arrow, the function should display the total score on the graphics window. Hint: calculate distances() by
