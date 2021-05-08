@@ -1,14 +1,15 @@
-# tennis2.py
-# fmt: off
+# 05_tennis2.py
 
 from random import random
 
 
-"""5. Write a modified version tennis2.py of the tennis program from the lecture. This program should ask the user to 
-enter the probability of winning a point for one of the players, and how many sets of tennis between the two players 
-should be simulated. It should report on the proportion of the sets won by each player. Assume that to win a set a 
-player has to have won 6 games and be at least two games ahead of his opponent."""
 def main():
+    """
+    5. Write a modified version tennis2.py of the tennis program from the lecture. This program should ask the user to
+    enter the probability of winning a point for one of the players, and how many sets of tennis between the two players
+    should be simulated. It should report on the proportion of the sets won by each player. Assume that to win a set a
+    player has to have won 6 games and be at least two games ahead of his opponent.
+    """
     prob, sets = get_inputs()
     set_wins = simulate_n_sets(prob, sets)
     print_summary(set_wins, sets)

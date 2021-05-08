@@ -1,19 +1,22 @@
-# bag_of_change.py
-# fmt: off
+# 08_bag_of_change.py
 
-"""8. Create a class called ”BagOfChange”, which will model a collection of coins (1p, 2p, 5p, 10p, 20p, 50p, £1, £2). 
-The constructor will take the quantity of each coin as individual parameters and convert them into a single list
-__init__(self, pence1, pence2, pence5, pence10, pence20, pence50, pound1, pound2). You will need to include methods to 
-allow users to:
 
--take a specific coin out remove_coin(self, coin);
--add a specific coin into the collection add_coin(self, coin);
--calculate the total number of coins total_no_coins(self);
--and calculate the total value of the coins in the collection total_value(self).
-
-For the remove_coin() and add_coin() methods, you may need to create an additional instance variable in the constructor 
-self.coins = [1,2,5,10,20,50,100,200] which you can use to help you find the relevent index."""
 class BagOfChange:
+    """
+    8. Create a class called "BagOfChange", which will model a collection of coins (1p, 2p, 5p, 10p, 20p, 50p, £1, £2).
+    The constructor will take the quantity of each coin as individual parameters and convert them into a single list
+    __init__(self, pence1, pence2, pence5, pence10, pence20, pence50, pound1, pound2). You will need to include methods
+    to allow users to:
+
+    -take a specific coin out remove_coin(self, coin)
+    -add a specific coin into the collection add_coin(self, coin)
+    -calculate the total number of coins total_no_coins(self)
+    -and calculate the total value of the coins in the collection total_value(self)
+
+    For the remove_coin() and add_coin() methods, you may need to create an additional instance variable in the
+    constructor self.coins = [1,2,5,10,20,50,100,200] which you can use to help you find the relevent index.
+    """
+
     def __init__(self, pence1, pence2, pence5, pence10, pence20, pence50, pound1, pound2):
         self.bag_of_change = [
             pence1,

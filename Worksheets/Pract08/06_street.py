@@ -1,16 +1,17 @@
-# street.py
-# fmt: off
+# 06_street.py
 
 from random import random
 
 from graphics import GraphWin, Point, Polygon, Rectangle, Text
 
 
-"""6. Write a new program street.py which draws a whole street (i.e. row) of houses like those in the original house.py 
-program. The user should input the number of houses, the height of the graphics window, the (shared) door colour and the 
-probability that any light is on. The houses should be numbered (on their doors) starting from 1, and the houses should 
-fill the graphics window."""
 def main():
+    """
+    6. Write a new program street.py which draws a whole street (i.e. row) of houses like those in the original house.py
+    program. The user should input the number of houses, the height of the graphics window, the (shared) door colour and
+    the probability that any light is on. The houses should be numbered (on their doors) starting from 1, and the houses
+    should fill the graphics window.
+    """
     houses, size, door_colour, prob = get_inputs()
     draw_houses(houses, size, door_colour, prob)
 
