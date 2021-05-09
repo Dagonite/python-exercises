@@ -4,7 +4,7 @@
 from random import sample
 
 BALLS = range(1, 60)
-chosen_balls = sample(BALLS, 6)
+chosen_balls = list(map(str, sample(BALLS, 6)))
 chosen_balls.sort()
 
-print("Your chosen balls are:", " - ".join(str(ball) for ball in chosen_balls))
+print("Your chosen balls are:", " - ".join(chosen_balls))
