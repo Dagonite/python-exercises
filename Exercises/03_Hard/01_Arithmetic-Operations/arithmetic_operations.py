@@ -17,11 +17,11 @@ def arithmetic_operation(equation):
 
 if __name__ == "__main__":
     test_cases = [
-        ("11 + 10"),
-        ("8 - 4"),
-        ("6 * 7"),
-        ("24 // 8"),
-        ("5 // 0"),
+        "11 + 10",
+        "8 - 4",
+        "6 * 7",
+        "24 // 8",
+        "5 // 0",
     ]
 
     answers = [
