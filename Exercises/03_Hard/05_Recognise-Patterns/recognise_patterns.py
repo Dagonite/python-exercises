@@ -23,12 +23,11 @@ def count_occurrences(blob, pattern):
 
 
 def recognise_patterns(line):
-    splitted_input = line.split(";")
-    pattern = splitted_input[0]
-    blobs = splitted_input[1].split("|")
+    split_input = line.split(";")
+    pattern, blobs = split_input[0], split_input[1].split("|")
+
     output_str = ""
     total = 0
-
     if pattern == "":
         output_str = "0|" * len(blobs)
     else:
