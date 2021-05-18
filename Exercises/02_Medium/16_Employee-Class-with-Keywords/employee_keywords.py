@@ -1,6 +1,6 @@
 # employee_keywords.py
 # pylint: disable=no-member
-"""Create a class, Employee, that will take a full name as an argument as well as a zero or more keywords. Each instance 
+"""Create a class, Employee, that will take a full name as an argument, as well as zero or more keywords. Each instance 
 should have name and lastname attributes, plus attributes for each keyword (if any)."""
 
 
