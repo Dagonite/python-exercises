@@ -1,7 +1,7 @@
 # tribonacci.py
-"""Write a function that takes a signature list, returns the first n elements - signature included of the tribonacci
-sequence. A number in the tribonacci sequence is the sum of the 3 previous values. Signature will always contain 3 
-numbers; n will always be a non-negative number; if n == 0, then return an empty list."""
+"""Write a function that takes a signature which is a list of integers and the first n elements. The signature is the 
+start of the tribonacci sequence. A number in the tribonacci sequence is the sum of the 3 previous values. Signature 
+will always contain 3 numbers; n will always be a non-negative integer; if n == 0, then return an empty list."""
 
 
 def tribonacci(signature, n):

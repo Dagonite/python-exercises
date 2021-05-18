@@ -1,13 +1,12 @@
 # max_hourglass_sum.py
-"""Given a 6x6 2D array, an hourglass is a subset of values with indices falling in this pattern within the array:
+"""Given a 6x6 2d array, an hourglass is a subset of values with indices falling in this pattern within the array:
 
 a b c
   d  
 e f g
 
 There are 16 hourglasses in the array. An hourglass sum is the sum of an hourglass's values. Write a function to
-calculate the hourglass sum for every hourglass in the array, then return the maximum hourglass sum. The 2D Sarray will 
-always be 6x6."""
+calculate the hourglass sum for every hourglass in the array, then return the maximum hourglass sum."""
 
 
 def max_hourglass_sum(arr):

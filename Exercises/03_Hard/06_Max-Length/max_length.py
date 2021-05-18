@@ -1,5 +1,5 @@
 # max_length.py
-"""Write a function that finds the maximum length of a concatenated string with unique characters."""
+"""Write a function that finds the maximum length of a concatenated string of unique characters."""
 
 
 def max_length(arr):
@@ -18,7 +18,7 @@ def max_length(arr):
 if __name__ == "__main__":
     test_cases = [
         ["at", "ee", "tude", "blou"],
-        ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"],
+        ["a", "b", "c", "d", "e", "f", "g", "h", "i"],
         ["b", "b"],
         [],
         ["att", "itude", "gril"],
@@ -26,12 +26,12 @@ if __name__ == "__main__":
     ]
 
     answers = [
-        6,
-        11,
-        1,
-        0,
-        5,
-        4,
+        6,  # 'atblou'
+        9,  # 'abcdefghi'
+        1,  # 'b'
+        0,  # ''
+        5,  # 'itude'
+        4,  # 'abcd'
     ]
 
     for i, test_case in enumerate(test_cases):
