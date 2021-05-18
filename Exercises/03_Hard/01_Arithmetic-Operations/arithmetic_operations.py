@@ -1,6 +1,6 @@
 # arithmetic_operations.py
-"""Create a function to perform basic arithmetic operations that includes addition, subtraction, multiplication and 
-division on a string number (e.g. "12 + 24" or "23 - 21" or "12 // 12" or "12 * 21")."""
+"""Create a function to perform basic arithmetic operations (addition, subtraction, multiplication, and division) on a 
+string equation (e.g. "12 + 24" returns 36)."""
 
 from operator import add, sub, floordiv, mul
 
