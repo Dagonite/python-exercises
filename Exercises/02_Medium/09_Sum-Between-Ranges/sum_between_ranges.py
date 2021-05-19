@@ -12,7 +12,7 @@ def sbr_imp(x, y):
 
 
 def sbr_reduce(x, y):
-    """Sum between range using reduce and lambda."""
+    """Sum between range using reduce() and lambda."""
     from functools import reduce
 
     return reduce(lambda n, m: n + m, range(x, y + 1))
@@ -30,18 +30,19 @@ if __name__ == "__main__":
         sbr_sum,
     ]
 
-    def call_func(func):
-        test_cases = [
-            (5, 10),
-            (8, 11),
-            (1, 4),
-        ]
-        answers = [
-            45,
-            38,
-            10,
-        ]
+    test_cases = [
+        (5, 10),
+        (8, 11),
+        (1, 4),
+    ]
 
+    answers = [
+        45,
+        38,
+        10,
+    ]
+
+    def call_func(func):
         for i, test_case in enumerate(test_cases):
             res = func(test_case[0], test_case[1])
             print([answers[i] == res], res)
