@@ -32,4 +32,4 @@ if __name__ == "__main__":
 
     for i, (array, array_length, K) in enumerate(test_cases):
         res = countdown_count(array, array_length, K)
-        print("[PASS]" if [answers[i] == res] else "[FAIL]", f"countdown_count({array}, {array_length}, {K}) = {res}")
+        print("[PASS]" if answers[i] == res else "[FAIL]", f"countdown_count({array}, {array_length}, {K}) = {res}")
