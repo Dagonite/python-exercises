@@ -18,6 +18,10 @@ if __name__ == "__main__":
         "234133",
         "abcdef",
         "14ab15",
+        " 232",
+        " 92 ",
+        "123 ",
+        "9834 ",
     ]
 
     answers = [
@@ -30,8 +34,12 @@ if __name__ == "__main__":
         True,
         False,
         False,
+        False,
+        False,
+        False,
+        False,
     ]
 
     for i, test_case in enumerate(test_cases):
         res = valid(test_case)
-        print("[Pass]" if answers[i] == res else "[Fail]", res)
+        print("[Pass]" if answers[i] == res else "[Fail]", f"{test_case} = {res}")
