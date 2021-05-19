@@ -1,8 +1,7 @@
 # running_sum.py
-"""Given a list, nums, return the running sum of nums. We define a running sum of an array as running_sum[i] = 
-sum(nums[0]…nums[i])."""
+"""Given a list, nums, return the running sum of nums."""
 
-# could also use accumulate from itertools
+# could also use accumulate() from itertools
 def running_sum(nums):
     i = 1
     while i < len(nums):
