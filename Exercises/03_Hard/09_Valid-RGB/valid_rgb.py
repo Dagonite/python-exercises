@@ -1,4 +1,6 @@
 # valid_rgb.py
+"""Given an RGB(A) CSS color, determine whether its format is valid or not. Create a function that takes a string (e.g. 
+"rgb(0, 0, 0)") and returns True if the format is correct, otherwise False."""
 
 
 def valid_color(color):
