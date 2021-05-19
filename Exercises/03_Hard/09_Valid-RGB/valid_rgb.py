@@ -7,6 +7,7 @@ def valid_color(color):
     def rgb(r, g, b):
         return all(0 <= p <= 255 for p in (r, g, b))
 
+    # pylint: disable=unused-variable
     def rgba(r, g, b, a):
         return rgb(r, g, b) and 0 <= a <= 1
 
