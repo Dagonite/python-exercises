@@ -1,5 +1,7 @@
 # odd_occurrence.py
-"""Given a list of numbers, write a function to find the number that occurs an odd number of times."""
+"""Given a list of numbers, write a function to find the number in the list that appears an odd number of times."""
+
+from functools import reduce
 
 
 def find_odd_occurrence_1(seq):
@@ -16,8 +18,6 @@ def find_odd_occurrence_2(seq):
     """Solution using the xor operator and reduce(). Exclusive or is commutative, which results in an odd occurence of a
     number in a sequence not being cancelled out when being reduced. Problem with reduce() is that there's quite a bit
     overhead as the lambda func is getting called for every element in the sequence."""
-    from functools import reduce
-
     return reduce(lambda x, y: x ^ y, seq)
 
 
@@ -55,7 +55,7 @@ if __name__ == "__main__":
         print(f"{solution.__name__}:")
         solution = timed_func(solution)
         for test_case in test_cases:
-            res = solution(test_case)
+            res, seconds = solution(test_case)
             # print(f"{str(test_case):<{spacing}}")
-            print(f"{res[0]}, that took {res[1]}s")
+            print(f"{res}, that took {seconds}s")
         print()
