@@ -2,12 +2,11 @@
 """Given a list of numbers, write a function to find the number in the list that appears an odd number of times."""
 
 from functools import reduce
+from collections import Counter
 
 
 def find_odd_occurrence_1(seq):
     """Solution using the Counter class."""
-    from collections import Counter
-
     counts = Counter(seq)
     for n in counts:
         if counts[n] % 2:
@@ -49,13 +48,10 @@ if __name__ == "__main__":
         shuffle(seq)
         test_cases.append(seq)
 
-    # spacing = len(max(test_cases, key=len)) * 3 + 2
-
     for solution in solutions:
         print(f"{solution.__name__}:")
         solution = timed_func(solution)
         for test_case in test_cases:
             res, seconds = solution(test_case)
-            # print(f"{str(test_case):<{spacing}}")
             print(f"{res}, that took {seconds}s")
         print()
