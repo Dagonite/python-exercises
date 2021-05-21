@@ -17,21 +17,28 @@ string, return a list of all possible variations of the PIN."""
 
 from itertools import product
 
+NEIGHBOURS = {
+    "0": ("0", "8"),
+    "1": ("1", "2", "4"),
+    "2": ("1", "2", "3", "5"),
+    "3": ("2", "3", "6"),
+    "4": ("1", "4", "5", "7"),
+    "5": ("2", "4", "5", "6", "8"),
+    "6": ("3", "5", "6", "9"),
+    "7": ("4", "7", "8"),
+    "8": ("7", "5", "8", "9", "0"),
+    "9": ("5", "8", "9"),
+}
+
 
 def get_pins(observed):
-    NEIGHBOURS = {
-        "1": ("1", "2", "4"),
-        "2": ("1", "2", "3", "5"),
-        "3": ("2", "3", "6"),
-        "4": ("1", "4", "5", "7"),
-        "5": ("2", "4", "5", "6", "8"),
-        "6": ("3", "5", "6", "9"),
-        "7": ("4", "7", "8"),
-        "8": ("7", "5", "8", "9", "0"),
-        "9": ("5", "8", "9"),
-        "0": ("8", "0"),
-    }
+    """
+    Solution that gets all the possible products using the value of each digit adjacent to the key (including the
+    key's digit too).
 
+    Another possible solution is to just have a list of strings of the adjacent digits and use the observed PIN as
+    indices for the list.
+    """
     return ["".join(digits) for digits in product(*(NEIGHBOURS[digit] for digit in observed))]
 
 
@@ -67,18 +74,6 @@ if __name__ == "__main__":
             "55",
         ],
         [
-            "812",
-            "813",
-            "816",
-            "822",
-            "823",
-            "826",
-            "832",
-            "833",
-            "836",
-            "852",
-            "853",
-            "856",
             "012",
             "013",
             "016",
@@ -91,6 +86,18 @@ if __name__ == "__main__":
             "052",
             "053",
             "056",
+            "812",
+            "813",
+            "816",
+            "822",
+            "823",
+            "826",
+            "832",
+            "833",
+            "836",
+            "852",
+            "853",
+            "856",
         ],
     ]
 
