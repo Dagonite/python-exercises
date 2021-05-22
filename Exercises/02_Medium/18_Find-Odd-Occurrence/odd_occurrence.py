@@ -40,11 +40,8 @@ if __name__ == "__main__":
 
     test_cases = []
     for i in range(5):
-        list_1 = [randrange(1, 10) for _ in range(1, 8000)]
-        list_2 = list_1[:]
         n = randrange(1, 10)
-        list_3 = [n] * randrange(1, 2000, 2)
-        seq = list_1 + list_2 + list_3
+        seq = [randrange(1, 10) for _ in range(1, 8000)] * 2 + [n] * randrange(1, 2000, 2)
         shuffle(seq)
         test_cases.append(seq)
 
