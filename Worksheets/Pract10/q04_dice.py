@@ -1,4 +1,4 @@
-# 04_dice.py
+# q04_dice.py
 
 from random import choice
 

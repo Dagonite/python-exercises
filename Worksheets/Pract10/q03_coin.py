@@ -1,4 +1,4 @@
-# 03_coin.py
+# q03_coin.py
 
 
 class Coin:

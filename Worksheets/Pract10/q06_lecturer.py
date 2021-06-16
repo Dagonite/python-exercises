@@ -1,4 +1,4 @@
-# 06_lecturer.py
+# q06_lecturer.py
 
 
 class Lecturer:

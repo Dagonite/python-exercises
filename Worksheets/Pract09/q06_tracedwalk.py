@@ -1,4 +1,4 @@
-# 06_tracedwalk.py
+# q06_tracedwalk.py
 
 from random import random
 

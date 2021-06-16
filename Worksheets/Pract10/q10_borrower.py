@@ -1,4 +1,4 @@
-# 10_borrower.py
+# q10_borrower.py
 
 
 class Borrower:

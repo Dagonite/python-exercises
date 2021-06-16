@@ -1,4 +1,4 @@
-# 01_coinflips.py
+# q01_coinflips.py
 
 from random import random
 

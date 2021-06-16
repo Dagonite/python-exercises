@@ -1,4 +1,4 @@
-# graphicalwalks.py
+# q04_graphicalwalks.py
 
 from random import random
 

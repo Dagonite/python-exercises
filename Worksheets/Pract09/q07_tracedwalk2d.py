@@ -1,4 +1,4 @@
-# 07_tracedwalk2d.py
+# q07_tracedwalk2d.py
 
 from random import random
 

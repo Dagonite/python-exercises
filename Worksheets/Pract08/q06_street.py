@@ -1,4 +1,4 @@
-# 06_street.py
+# q06_street.py
 
 from random import random
 

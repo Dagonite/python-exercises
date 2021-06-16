@@ -1,4 +1,4 @@
-# 03_randomwalks2d.py
+# q03_randomwalks2d.py
 
 from random import random
 

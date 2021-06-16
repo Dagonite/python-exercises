@@ -1,4 +1,4 @@
-# 02_house2.py
+# q02_house2.py
 
 from graphics import GraphWin, Point, Rectangle, Text, Polygon
 

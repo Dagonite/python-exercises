@@ -1,4 +1,4 @@
-# 02_rectangle.py
+# q02_rectangle.py
 
 
 class Rectangle:
