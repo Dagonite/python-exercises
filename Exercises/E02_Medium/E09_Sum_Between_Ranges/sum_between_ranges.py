@@ -1,4 +1,3 @@
-# sum_between_ranges.py
 """Assuming you have two integers, x and y, with y bigger than x. Sum all the numbers from x to y inclusively. Example: 
 if x is 1 and y is 5, then sum 1+2+3+4+5."""
 

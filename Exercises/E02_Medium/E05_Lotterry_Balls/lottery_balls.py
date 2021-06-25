@@ -1,4 +1,3 @@
-# lottery_balls.py
 """Script which picks 6 random Lottery balls."""
 
 from random import sample

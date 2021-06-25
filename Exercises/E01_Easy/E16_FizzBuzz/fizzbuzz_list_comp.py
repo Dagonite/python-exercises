@@ -1,4 +1,3 @@
-# fizzbuzz_list_comp.py
 """Write a function that returns FizzBuzz (1 - 100) as a list."""
 
 

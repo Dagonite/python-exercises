@@ -1,4 +1,3 @@
-# draw_cards_from_deck.py
 """Make a standard deck of cards, shuffle the deck, and then draw two cards at random. Print the two cards."""
 
 from random import choice, shuffle

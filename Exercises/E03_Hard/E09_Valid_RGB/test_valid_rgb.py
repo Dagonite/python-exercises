@@ -1,5 +1,3 @@
-# test_valid_rgb.py
-
 import valid_rgb
 import unittest
 from random import randrange, uniform

@@ -1,4 +1,3 @@
-# remove_duplicates.py
 """Create a function which takes a list of numbers and returns a list with duplicates removed without affecting the 
 order of the list."""
 

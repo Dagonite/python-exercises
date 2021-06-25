@@ -1,4 +1,3 @@
-# count_uppercase.py
 """Write a function which returns how many uppercase letters there are in a list of various words."""
 
 

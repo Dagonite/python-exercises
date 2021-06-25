@@ -1,4 +1,3 @@
-# fizzbuzz.py
 """Write a function that prints out FizzBuzz (1 - 100)."""
 
 

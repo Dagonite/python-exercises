@@ -1,4 +1,3 @@
-# odd_occurrence.py
 """Given a list of numbers, write a function to find the number in the list that appears an odd number of times."""
 
 from functools import reduce

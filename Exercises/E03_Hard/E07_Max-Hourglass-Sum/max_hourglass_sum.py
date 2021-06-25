@@ -1,4 +1,3 @@
-# max_hourglass_sum.py
 """Given a 6x6 2d array, an hourglass is a subset of values with indices falling in this pattern within the array:
 
 a b c

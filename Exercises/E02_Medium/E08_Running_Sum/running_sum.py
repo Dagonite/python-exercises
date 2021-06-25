@@ -1,4 +1,3 @@
-# running_sum.py
 """Given a list, nums, return the running sum of nums."""
 
 # could also use accumulate() from itertools

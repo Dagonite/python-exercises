@@ -1,4 +1,3 @@
-# countdown_count.py
 """Create a function which takes an array, the length of the array, and a countdown start value, K. A contiguous 
 subarray is an m-countdown if it is of length m and contains the integers m, m-1, m-2, ..., 2, 1 in that order. For 
 example, [3, 2, 1] is a 3-countdown. This function should return a count of the number of K-countdowns in the array."""

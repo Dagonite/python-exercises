@@ -1,4 +1,3 @@
-# sum_odd_numbers.py
 """Given a range of numbers from 1 to 100, sum all of the odd numbers in the range."""
 
 from functools import reduce

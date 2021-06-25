@@ -1,4 +1,3 @@
-# convert_xs.py
 """Write a function that takes a string of at least 3 characters comprising of "X"s and "."s. The function should return 
 the smallest number of changes that would be needed to make every character a dot. Up to three connected "X"s can be
 converted at once."""

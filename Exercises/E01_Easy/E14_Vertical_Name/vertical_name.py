@@ -1,4 +1,3 @@
-# vertical_name.py
 """Create a function that takes a name and prints it out vertically."""
 
 # using a loop

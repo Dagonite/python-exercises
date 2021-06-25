@@ -1,4 +1,3 @@
-# calculating_with_functions.py
 """Create functions so that function calls like "seven(times(five()))" return the expected integer."""
 
 

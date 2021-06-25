@@ -1,4 +1,3 @@
-# max_length.py
 """Write a function that takes an array of strings and finds the maximum length of a concatenated string of unique 
 characters."""
 

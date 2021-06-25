@@ -1,4 +1,3 @@
-# extract_primes.py
 """Create a function that takes an integer argument and returns a list of prime numbers found in the decimal 
 representation of that number (not factors). The list should be in acending order. If a prime number appears more than 
 once, every occurance should be listed. If no prime numbers are found, return an empty list."""

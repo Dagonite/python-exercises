@@ -1,4 +1,3 @@
-# three_sum.py
 """Write a program that finds the index of three numbers in a sorted array that sum to a target. If no combination 
 exists, return [-1, -1, -1]."""
 

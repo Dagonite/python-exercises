@@ -1,4 +1,3 @@
-# observed_pin.py
 """A keypad has the following layout:
 
 ┌───┬───┬───┐
