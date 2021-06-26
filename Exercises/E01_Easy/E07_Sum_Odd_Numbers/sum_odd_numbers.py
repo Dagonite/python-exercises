@@ -1,4 +1,4 @@
-"""Given a range of numbers from 1 to 100, sum all of the odd numbers in the range."""
+"""Given a range of numbers from 1 to 100, sum all of the odd numbers."""
 
 from functools import reduce
 
