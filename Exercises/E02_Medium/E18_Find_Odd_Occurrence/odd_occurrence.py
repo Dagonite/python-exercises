@@ -49,5 +49,5 @@ if __name__ == "__main__":
         solution = timed_func(solution)
         for test_case in test_cases:
             res, seconds = solution(test_case)
-            print(f"{res}, that took {seconds}s")
+            print(f"{res}, that took {seconds:.6f}s")
         print()
