@@ -26,4 +26,4 @@ my_layout = Layout(
     xaxis=x_axis_config,
     yaxis=y_axis_config,
 )
-offline.plot({"data": data, "layout": my_layout}, filename="d6_times_d6.html")
+offline.plot({"data": data, "layout": my_layout}, filename="E06_d6_times_d6.html")
