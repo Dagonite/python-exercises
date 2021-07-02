@@ -1,5 +1,6 @@
 Repository for my Python exercises
 ===
+
 Requirements
 ---
 Install the requirements by entering this command in a terminal:
