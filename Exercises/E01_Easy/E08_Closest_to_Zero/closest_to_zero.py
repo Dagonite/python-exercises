@@ -5,17 +5,26 @@ returned. For example, if the input is -5 and 5, then 5 must be returned."""
 
 def compute_closest_to_zero(ts):
     try:
-        closest = ts[0]  # set closest to first value in ts
-        for t in ts:  # iterate over values in ts
+        # set closest to first value in ts
+        closest = ts[0]
+
+        # iterate over values in ts
+        for t in ts:
             abs_closest = abs(closest)
             abs_t = abs(t)
+
+            # if t is closer to 0 than closest, set closest as t
             if abs_t < abs_closest:
-                closest = t  # if t is closer to 0 than closest, set closest as t
+                closest = t
+            # if t and closest have same abs but are different, set closest to abs_t
             elif abs_t == abs_closest and t != closest:
-                closest = abs_t  # if t and closest have same abs but are different, set closest to abs_t
+                closest = abs_t
+
         return closest
+
     except:
-        return 0  # return 0 if ts empty
+        # return 0 if ts empty
+        return 0
 
 
 if __name__ == "__main__":
