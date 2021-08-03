@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import List
 
-FIXED_VACATION_DAYS_PAYOUT = 5  # The fixed nr of vacation days that can be paid out.
+FIXED_VACATION_DAYS_PAYOUT = 5  # The fixed nr of vacation days that can be paid out
 
 
 class VacationDaysShortageError(Exception):
