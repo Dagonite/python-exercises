@@ -39,7 +39,7 @@ class Position:
             component_format_spec = f".{num_decimal_places}f"
         latitude = format(abs(self.latitude), component_format_spec)
         longitude = format(abs(self.longitude), component_format_spec)
-        return f"{latitude}° {self.latitude_hemisphere}, " f"{longitude}° {self.longitude_hemisphere}"
+        return f"{latitude}° {self.latitude_hemisphere}, {longitude}° {self.longitude_hemisphere}"
 
 
 class EarthPosition(Position):
