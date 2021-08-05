@@ -1,16 +1,19 @@
-# q02_rectangle.py
+"""q02_rectangle.py"""
 
 
 class Rectangle:
     """
-    2. Create a class called "Rectangle". The object should be created with a height and width which are passed as
-    parameters to the constructor __init__(self, height, width). The user will require three things to be calculated:
+    2. Create a class called "Rectangle". The object should be created with a
+    height and width which are passed as parameters to the constructor
+    __init__(height, width). The user will require three things to be
+    calculated:
 
-    -the area calculate_area(self)
-    -the perimeter calculate_perimeter(self)
-    -and the diagonal length between opposing corners calculate_diagonal_length(self)
+    -the area calculate_area()
+    -the perimeter calculate_perimeter()
+    -the diagonal length between opposing corners calculate_diagonal_length()
 
-    Also a method which will print all the information relating to the rectangle retrieve_information(self).
+    Also a method which will print all the information relating to the rectangle
+    retrieve_information().
     """
 
     def __init__(self, height, width):

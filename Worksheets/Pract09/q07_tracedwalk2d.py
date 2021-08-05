@@ -1,4 +1,4 @@
-# q07_tracedwalk2d.py
+"""q07_tracedwalk2d.py"""
 
 from random import random
 
@@ -7,10 +7,13 @@ import numpy as np
 
 def simulate_steps(cols, rows):
     """
-    7. [Harder] Write a two-dimensional version tracedwalk2d.py of tracedwalk.py. This should simulate a single random
-    walk of the form considered in pract08, where the walker begins in the central square of a square two dimensional
-    grid of dimensions 9 by 9 steps, and where the walk ends when the walker steps off the grid. Output the results in
-    tabular form. Hint: you may need to use nested (two dimensional) lists.
+    7. [Harder] Write a two-dimensional version of tracedwalk.py. This should
+    simulate a single random walk of the form considered in pract08, where the
+    walker begins in the central square of a square two dimensional grid of
+    dimensions 9 by 9 steps, and where the walk ends when the walker steps off
+    the grid. Output the results in tabular form.
+
+    Hint: you may need to use nested (two dimensional) lists.
     """
     grid = [[0] * cols for _ in range(rows)]
     current_col = int(cols / 2)

@@ -1,18 +1,20 @@
-# q05_book.py
+"""q05_book.py"""
 
 
 class Book:
     """
-    5. Create a class called ”Book” for a bookshop. The book will need to contain the title, author, number of pages,
-    ISBN number, price, and the number of copies available. The number of copies can be assumed to be 0 upon creation of
-    the object. Therefore, the parameters for the constructor should be title, author, number of pages, ISBN, and price
-    __init__(self, title, author, no_pages, isbn, price). The class will require a number of methods to allow the
-    bookshop to:
+    5. Create a class called 'Book' for a bookshop. The book will need to
+    contain the title, author, number of pages, ISBN number, price, and the
+    number of copies available. The number of copies can be assumed to be 0 upon
+    creation of the object. Therefore, the parameters for the constructor should
+    be title, author, number of pages, ISBN, and price __init__(title, author,
+    no_pages, isbn, price). The class will require a number of methods to allow
+    the bookshop to:
 
-    -change the price change_price(self, new_price)
-    -sell a copy of the book sell_copy(self)
-    -restock the book restock(self, new_copies)
-    -and print all the information about the book retrieve_book_information(self)
+    -change the price change_price(new_price)
+    -sell a copy of the book sell_copy()
+    -restock the book restock(new_copies)
+    -and print all the information about the book retrieve_book_information()
     """
 
     def __init__(self, title, author, no_pages, isbn, price):

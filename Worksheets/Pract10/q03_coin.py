@@ -1,12 +1,14 @@
-# q03_coin.py
+"""q03_coin.py"""
 
 
 class Coin:
     """
-    3. Create a class called "Coin". The coin will have a value in pence, which is passed into the object at creation
-    __init__(self, value). Using the random class, write a method which can simulate flipping the coin, returning either
-    heads or tails flip_coin(self). You can assume that the coin is fair (i.e. 50% chance of it landing on heads).
-    Return to pract08 for a reminder of using the random module.
+    3. Create a class called "Coin". The coin will have a value in pence, which
+    is passed into the object at creation __init__(value). Using the random
+    class, write a method which can simulate flipping the coin, returning either
+    heads or tails flip_coin(). You can assume that the coin is fair (i.e.
+    50% chance of it landing on heads). Return to pract08 for a reminder of
+    using the random module.
     """
 
     def __init__(self, value):

@@ -1,10 +1,13 @@
-# q01_lift.py
+"""q01_lift.py"""
 
 
 class Lift:
     """
-    1. Using the Lift class created during the introduction, add an additional method which can be used to call the lift
-    call_lift(self, floor_called_from). Note: your method should make use of both the go_up, and go_down methods.
+    1. Using the Lift class created during the introduction, add an additional
+    method which can be used to call the lift call_lift(floor_called_from).
+
+    Note: your method should make use of both the go_up(), and go_down()
+    methods.
     """
 
     def __init__(self, max_floors):

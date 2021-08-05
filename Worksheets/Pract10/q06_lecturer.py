@@ -1,17 +1,18 @@
-# q06_lecturer.py
+"""q06_lecturer.py"""
 
 
 class Lecturer:
     """
-    6. Create a class called "Lecturer". The lecturer class will need to hold the following information: first name,
-    last name, salary, and units they teach. All this information will be set at the point that the object is created
-    __init__(self ,first_name, last_name, salary, units_taught) - where units_taught is a list. The university needs to
-    be able to:
+    6. Create a class called "Lecturer". The lecturer class will need to hold
+    the following information: first name, last name, salary, and units they
+    teach. All this information will be set at the point that the object is
+    created __init__(first_name, last_name, salary, units_taught) - where
+    units_taught is a list. The university needs to be able to:
 
-    -add new units add_unit(self, unit_name)
-    -remove units which are no longer taught remove_unit(self, unit_name)
-    -give the lecturer a pay rise give_pay_rise(self, rise_percentage)
-    -print information they have about the lecturer print_lecturer_information(self)
+    -add new units add_unit(unit_name)
+    -remove units which are no longer taught remove_unit(unit_name)
+    -give the lecturer a pay rise give_pay_rise(rise_percentage)
+    -print information they have about the lecturer print_lecturer_information()
     """
 
     def __init__(self, first_name, last_name, salary, units_taught):
