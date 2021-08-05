@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import List
 
-FIXED_VACATION_DAYS_PAYOUT = 5  # The fixed nr of vacation days that can be paid out
+FIXED_VACATION_DAYS_PAYOUT = 5  # fixed num of vacation days that can be paid out
 
 
 class VacationDaysShortageError(Exception):
@@ -17,7 +17,7 @@ class VacationDaysShortageError(Exception):
 
 
 class Role(Enum):
-    """Employee roles"""
+    """Employee roles."""
 
     PRESIDENT = auto()
     VICEPRESIDENT = auto()
@@ -33,14 +33,14 @@ class Employee(ABC):
 
     name: str
     role: Role
-    vacation_days: int = 25
+    vacation_days: int = 20
 
     @abstractmethod
     def pay(self) -> None:
-        """Method to call when paying an employee"""
+        """Method to call when paying an employee."""
 
     def take_a_holiday(self) -> None:
-        """Let the employee take a holiday (lazy bastard)"""
+        """Let the employee take a holiday."""
 
         if self.vacation_days < 1:
             raise VacationDaysShortageError(
@@ -69,21 +69,21 @@ class Employee(ABC):
 class HourlyEmployee(Employee):
     """Employee that's paid based on number of worked hours."""
 
-    hourly_rate: float = 50
-    hours_worked: int = 10
+    hourly_rate: float = 15.45
+    hours_worked: int = 9
 
     def pay(self) -> None:
-        print(f"Paying employee {self.name} a hourly rate of £{self.hourly_rate} for {self.hours_worked} hours.")
+        print(f"Paying employee {self.name} a hourly rate of £{self.hourly_rate} for {self.hours_worked} hours")
 
 
 @dataclass
 class SalariedEmployee(Employee):
     """Employee that's paid based on a fixed monthly salary."""
 
-    monthly_salary: float = 5000
+    monthly_salary: float = 2500
 
     def pay(self) -> None:
-        print(f"Paying employee {self.name} a monthly salary of £{self.monthly_salary}.")
+        print(f"Paying employee {self.name} a monthly salary of £{self.monthly_salary}")
 
 
 class Company:
@@ -101,13 +101,13 @@ class Company:
         for new_employee in new_employees:
             self.employees.append(new_employee)
 
-    def find_employees(self, role: Role) -> List[Employee]:
-        """Find all employees with a particular role in the employee list"""
+    def find_employees_by_role(self, role: Role) -> List[Employee]:
+        """Find all employees with a particular role in the employee list."""
         return [employee for employee in self.employees if employee.role is role]
 
 
 if __name__ == "__main__":
-    # create company named Dagonite
+    # create company named dagonite
     dagonite = Company()
 
     # add multiple employees at once
@@ -123,13 +123,18 @@ if __name__ == "__main__":
     dagonite.add_employee(SalariedEmployee(name="Adam", role=Role.INTERN))
 
     # print employees in certain roles
-    print(f"{dagonite.find_employees(role=Role.VICEPRESIDENT) = }")
-    print(f"{dagonite.find_employees(role=Role.MANAGER) = }")
-    print(f"{dagonite.find_employees(role=Role.INTERN) = }")
-    print(f"{dagonite.find_employees(role=Role.WORKER) = }")
+    print(dagonite.find_employees_by_role(Role.VICEPRESIDENT))
+    print(dagonite.find_employees_by_role(Role.MANAGER))
+    print(dagonite.find_employees_by_role(Role.INTERN))
+    print(dagonite.find_employees_by_role(Role.WORKER))
 
-    # pay an employee
-    dagonite.employees[0].pay()
+    # pay louis
+    louis = dagonite.employees[0]
+    louis.pay()
 
-    # employee goes on holiday
-    dagonite.employees[0].take_a_holiday()
+    # louis goes on holiday
+    for _ in range(5):
+        louis.take_a_holiday()
+
+    # louis gets holiday payout
+    louis.payout_a_holiday()
