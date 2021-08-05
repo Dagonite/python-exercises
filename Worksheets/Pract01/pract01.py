@@ -19,7 +19,7 @@ def euros_to_pounds():
     """
     3. Write a function, euros_to_pounds(), that converts an amount in Euros
     entered by the user to a corresponding amount in Pounds. Assume that the
-    exchange rate is 1.15 Euros to the Pound.
+    exchange rate is 1.108 Euros to the Pound.
     """
     euros = float(input("Enter an amount in euros: "))
     pounds = euros / 1.108
