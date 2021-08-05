@@ -7,7 +7,8 @@ def say_name():
 
 
 def say_hello_world():
-    """2. Write a function, say_hello_world(), that uses two print statements to
+    """
+    2. Write a function, say_hello_world(), that uses two print statements to
     display 'Hello world'.
     """
     print("Hello")
@@ -15,7 +16,8 @@ def say_hello_world():
 
 
 def euros_to_pounds():
-    """3. Write a function, euros_to_pounds(), that converts an amount in Euros
+    """
+    3. Write a function, euros_to_pounds(), that converts an amount in Euros
     entered by the user to a corresponding amount in Pounds. Assume that the
     exchange rate is 1.15 Euros to the Pound.
     """
@@ -25,8 +27,9 @@ def euros_to_pounds():
 
 
 def add_up():
-    """4. Write a functionn, add_up(), that asks the user to enter two numbers
-    and outputs the sum.
+    """
+    4. Write a function, add_up(), that asks the user to enter two numbers and
+    outputs the sum.
     """
     n = float(input("Gimme a number: "))
     m = float(input("Gimme another number: "))
@@ -35,11 +38,13 @@ def add_up():
 
 
 def change_counter():
-    """5. Write a function, change_counter(), that asks the user how many 1p,
-    2p, and 5p coins they have (using three separate questions), and then
-    display the total amount of money in pence. Hint: remember that variable
-    names cannot begin with a digit, so you might like to use names like
-    'two_pence'.
+    """
+    5. Write a function, change_counter(), that asks the user how many 1p, 2p,
+    and 5p coins they have (using three separate questions), and then display
+    the total amount of money in pence.
+
+    Hint: remember that variable names cannot begin with a digit, so you might
+    like to use names like 'two_pence'.
     """
     one_pence = int(input("How many 1p coins do you have? "))
     two_pence = int(input("How many 2p coins do you have? "))
@@ -49,38 +54,43 @@ def change_counter():
 
 
 def ten_hellos():
-    """6. Write a function, ten_hellos(), that uses a loop to display 'Hello
-    world' ten times (on separate lines).
+    """
+    6. Write a function, ten_hellos(), that uses a loop to display 'Hello world'
+    ten times (on separate lines).
     """
     for _ in range(10):
         print("Hello world")
 
 
 def count():
-    """7. Write a function, count(), that instead of counting from 0 to 9, it
-    counts up from 1 to 10. Hint: use a little arithmetic in the print
-    statement.
+    """
+    7. Write a function, count(), that instead of counting from 0 to 9, it
+    counts up from 1 to 10.
+
+    Hint: use a little arithmetic in the print statement.
     """
     for i in range(10):  # in reality this is dumb, you would just do range(1, 11)
         print(i + 1)
 
 
 def weights_table():
-    """8. [harder] Write a function, weights_table(), that outputs a two-column
+    """
+    8. [harder] Write a function, weights_table(), that outputs a two-column
     table of kilogram weights and their pound equivalents for kilogram values 0,
-    10, 20 ... 100. Don't worry too much about formatting the table neatly.
+    10, 20, ..., 100. Don't worry too much about formatting the table neatly.
     """
     for i in range(11):
         print(i * 10, i * 22)
 
 
 def future_value():
-    """9. [harder] Write a function, future_value(), that uses a loop to
-    calculate the future value of an investment amount, assuming an annual
-    interest rate of 5.5%. The function should ask the user for the initial
-    amount and the number of years that it is to be invested, and should output
-    the final value of the investment using compound interest with the interest
-    compounded every year.
+    """
+    9. [harder] Write a function, future_value(), that uses a loop to calculate
+    the future value of an investment amount, assuming an annual interest rate
+    of 5.5%. The function should ask the user for the initial amount and the
+    number of years that it is to be invested, and should output the final value
+    of the investment using compound interest with the interest compounded every
+    year.
     """
     investment = float(input("Enter the investment amount in GBP: "))
     years = int(input("Enter the years of investment: "))
@@ -99,9 +109,7 @@ if __name__ == "__main__":
     func_count = len(funcs)
 
     def print_func_names():
-        """Helper function that prints the index and name of all of the
-        functions in this script.
-        """
+        """Prints the index and name of all of the functions in this script."""
         print("\nFunctions:")
         for i, func in enumerate(funcs, start=1):
             print(f"{i} {func.__name__}")
