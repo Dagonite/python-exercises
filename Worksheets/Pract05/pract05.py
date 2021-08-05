@@ -1,4 +1,4 @@
-# Practical Worksheet 5: Using functions
+"""Practical Worksheet 5: Using functions"""
 
 import math
 

@@ -1,4 +1,4 @@
-# Practical Worksheet 6: If Statements and For Loops
+"""Practical Worksheet 6: If Statements and For Loops"""
 
 import random
 

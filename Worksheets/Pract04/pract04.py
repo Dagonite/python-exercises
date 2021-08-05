@@ -1,4 +1,4 @@
-# Practical Worksheet 4: Strings and Files
+"""Practical Worksheet 4: Strings and Files"""
 
 from graphics import GraphWin, Line, Point, Rectangle, Text
 

@@ -1,4 +1,4 @@
-# Practical Worksheet 7: Using Booleans and While Loops
+"""Practical Worksheet 7: Using Booleans and While Loops"""
 
 import random
 import time
@@ -11,9 +11,12 @@ from pract06 import calculate_grade
 
 def get_name():
     """
-    1. Write a get_name() function that reads a person’s name from the user. Assume that a valid name is any string of
-    alphabetic characters only, such as "Jenny". If the user enters an invalid name, the function should continue to ask
-    the user for a name until she/he enters a valid one. Once a valid name has been entered, this should be returned.
+    1. Write a get_name() function that reads a person's name from the user.
+    Assume that a valid name is any string of alphabetic characters only, such
+    as 'Jenny'. If the user enters an invalid name, the function should continue
+    to ask the user for a name until she/he enters a valid one. Once a valid
+    name has been entered, this should be returned.
+
     Hint: use the isalpha() method discussed above.
     """
     while True:
@@ -26,11 +29,13 @@ def get_name():
 
 def traffic_lights():
     """
-    2. The file pract07.py includes an incomplete traffic_lights() function that draws a set of traffic lights, with all
-    lights off (i.e. black). Fill in the body of the while loop at the bottom of this function so that it will
-    continuously cycle through the standard red → red/amber → green → amber → red sequence, simulating a real set of
-    traffic lights. Use "yellow" for amber, and add realistic delays between light changes using the sleep function from
-    the time module.
+    2. The file pract07.py includes an incomplete traffic_lights() function that
+    draws a set of traffic lights, with all lights off (i.e. black). Fill in the
+    body of the while loop at the bottom of this function so that it will
+    continuously cycle through the standard red → red/amber → green → amber →
+    red sequence, simulating a real set of traffic lights. Use 'yellow' for
+    amber, and add realistic delays between light changes using the sleep
+    function from the time module.
     """
     win = GraphWin("Traffic light")
     red = Circle(Point(100, 50), 20)
@@ -63,11 +68,13 @@ def traffic_lights():
 
 def grade_coursework():
     """
-    3. In pract06, you wrote a calculate_grade() function that returned a grade for a pupil's coursework based on a
-    mark. Write a function grade_coursework() that asks the user for a mark and, using a call to calculate_grade,
-    displays a "The pupil achieved a grade of ..." message including the grade achieved. The function should only
-    display a grade for valid marks (i.e. between 0 and 20) – if the user enters an invalid mark, they should be
-    re-prompted until they enter a valid one.
+    3. In pract06, you wrote a calculate_grade() function that returned a grade
+    for a pupil's coursework based on a mark. Write a function,
+    grade_coursework(), that asks the user for a mark and, using a call to
+    calculate_grade(), displays a 'The pupil achieved a grade of ...' message
+    including the grade achieved. The function should only display a grade for
+    valid marks (i.e. between 0 and 20) – if the user enters an invalid mark,
+    they should be re-prompted until they enter a valid one.
     """
     mark = ""
     while not mark.isdigit():
@@ -78,15 +85,16 @@ def grade_coursework():
 
 def order_price():
     """
-    4. Write an order_price() function that works out the price of an order of goods. The function should repeatedly ask
-    the user for:
+    4. Write an order_price() function that works out the price of an order of
+    goods. The function should repeatedly ask the user for:
 
-    (i) the unit price of a product in the order
-    (ii) the quantity of that product in the order
-    (iii) whether there are any more products in the order
+    (i) the unit price of a product in the order.
+    (ii) the quantity of that product in the order.
+    (iii) whether there are any more products in the order.
 
-    When the user has completed entering prices & quantities, the function should output a message containing the total
-    order price to 2 decimal places.
+    When the user has completed entering prices & quantities, the function
+    should output a message containing the total order price to 2 decimal
+    places.
     """
     total = 0
     quantity = 0
@@ -113,11 +121,15 @@ def order_price():
 
 def clickable_eye():
     """
-    5. Write a clickable_eye() function which draws a brown eye of radius 100 (note: I've set my own coords so this will
-    be different) within a graphics window of sufficient size. The function should then respond to each user click on
-    the eye by displaying (underneath the eye) the name of the part of the eye clicked on (i.e. one of "pupil", "iris",
-    "sclera"). The user should be able to finish (i.e. close the window) by clicking on any point outside the eye. Hint:
-    use your draw_brown_eye() and distance_between_points() functions from pract05.py.
+    5. Write a clickable_eye() function which draws a brown eye of radius 100
+    within a graphics window of sufficient size. The function should then
+    respond to each user click on the eye by displaying (underneath the eye) the
+    name of the part of the eye clicked on (i.e. one of 'pupil', 'iris',
+    'sclera'). The user should be able to finish (i.e. close the window) by
+    clicking on any point outside the eye.
+
+    Hint: use your draw_brown_eye() and distance_between_points() functions from
+    'pract05.py'.
     """
     win = GraphWin("Clickable eye", 800, 800)
     win.setCoords(0, 0, 1, 1)
@@ -148,10 +160,13 @@ def clickable_eye():
 
 def temperature_converter():
     """
-    6. The pract07.py file contains functions fahrenheit_to_celsius() and celsius_to_fahrenheit() for converting between
-    temperature units. Using calls to these two functions, write a temperature_converter() function that provides a
-    text-based interface which allows the user to (repeatedly) convert temperature values until he/she wishes to stop.
-    The user should be asked which way the conversion should be performed separately for each conversion.
+    6. The pract07.py file contains functions fahrenheit_to_celsius() and
+    celsius_to_fahrenheit() for converting between temperature units. Using
+    calls to these two functions, write a temperature_converter() function that
+    provides a text-based interface which allows the user to (repeatedly)
+    convert temperature values until he/she wishes to stop. The user should be
+    asked which way the conversion should be performed separately for each
+    conversion.
     """
     while True:
         conv_type = input(
@@ -179,20 +194,24 @@ def temperature_converter():
 
 
 def fahrenheit_to_celsius(fahrenheit):
+    """Helper function."""
     return (fahrenheit - 32) * 5 / 9
 
 
 def celsius_to_fahrenheit(celsius):
+    """Helper function."""
     return 9 / 5 * celsius + 32
 
 
 def guess_the_number():
     """
-    7. Write a guess_the_number() function. The function should generate a random number between 1 and 100 (using
-    randint() from the random module) and then allow the user to guess the number. After each incorrect guess, it should
-    display "Too high" or "Too low" as appropriate. If the user guesses the number within seven guesses, it should
-    display a "You win!" message saying how many guesses it took. After seven incorrect guesses, the function should
-    display a "You lose! – the number was ..." message.
+    7. Write a guess_the_number() function. The function should generate a
+    random number between 1 and 100 (using randint() from the random module) and
+    then allow the user to guess the number. After each incorrect guess, it
+    should display 'Too high' or 'Too low' as appropriate. If the user guesses
+    the number within seven guesses, it should display a 'You win!' message
+    saying how many guesses it took. After seven incorrect guesses, the function
+    should display a 'You lose! – the number was ...' message.
     """
     random_n = random.randint(1, 100)
     for i in range(1, 8):
@@ -223,11 +242,13 @@ def guess_the_number():
 
 def table_tennis_scorer():
     """
-    8. Write a table_tennis_scorer() function that allows the user to keep track of the points of two players in a game
-    of table tennis. In table tennis, the first player to reach 11 points wins the game; however, a game must be won by
-    at least a two point margin. The points for the players should be displayed on two halves of a graphics window, and
-    the user clicks anywhere on the appropriate side to increment a player's score. As soon as one player has won, a
-    "wins" message should appear on that side.
+    8. Write a table_tennis_scorer() function that allows the user to keep track
+    of the points of two players in a game of table tennis. In table tennis, the
+    first player to reach 11 points wins the game; however, a game must be won
+    by at least a two point margin. The points for the players should be
+    displayed on two halves of a graphics window, and the user clicks anywhere
+    on the appropriate side to increment a player's score. As soon as one player
+    has won, a 'wins' message should appear on that side.
     """
     win = GraphWin("Table tennis scorer", 500, 500)
     win.setCoords(0, 0, 1, 1)
@@ -270,17 +291,25 @@ def table_tennis_scorer():
     win.close()
 
 
-def clickable_box_of_eyes(cols, rows):
+def clickable_box_of_eyes(cols=None, rows=None):
     """
-    9. [harder] Write a function clickable_box_of_eyes() that takes two parameters columns and rows, and displays a rows
-    x columns grid of blue eyes (all of radius 50) within a box (rectangle). There should be a border of size 50 between
-    the box and the edge of the window. For each click of the mouse inside the box, the function should behave as
-    follows: if the click is on an eye, the row and column of that eye should be displayed in the space below the box,
-    for example as shown below given the click denoted by the dot. Note: row and column numbers should begin at 1.
+    9. [harder] Write a function clickable_box_of_eyes() that takes two
+    parameters columns and rows, and displays a rows x columns grid of blue eyes
+    (all of radius 50) within a box (rectangle). There should be a border of
+    size 50 between the box and the edge of the window. For each click of the
+    mouse inside the box, the function should behave as follows: if the click
+    is on an eye, the row and column of that eye should be displayed in the
+    space below the box, for example as shown below given the click denoted by
+    the dot. Note: row and column numbers should begin at 1.
 
-    If the user clicks within the box but not on an eye, the displayed message should be "Between eyes". The window
-    should close when the user clicks outside the box.
+    If the user clicks within the box but not on an eye, the displayed message
+    should be 'Between eyes'. The window should close when the user clicks
+    outside the box.
     """
+    if cols is None or rows is None:
+        cols = int(input("Enter the number of cols > "))
+        rows = int(input("Enter the number of rows > "))
+
     b_and_cols = cols + 1  # columns plus border
     b_and_rows = rows + 1  # rows plus border
     win = GraphWin("Clickable box of eyes", 100 * b_and_cols, 100 * b_and_rows)
@@ -312,6 +341,7 @@ def clickable_box_of_eyes(cols, rows):
 
 
 def draw_blue_eye(win, centre, radius):
+    """Helper function."""
     draw_circle(win, centre, radius, "white")
     draw_circle(win, centre, radius / 2, color_rgb(135, 207, 255))
     draw_circle(win, centre, radius / 4, "black")
@@ -319,16 +349,23 @@ def draw_blue_eye(win, centre, radius):
 
 def find_the_circle():
     """
-    10. [harder] Write a find_the_circle() function to play a simple game. This should start by displaying a graphics
-    window, and creating (but not displaying) a circle of radius 30 at a random position (use the randint function from
-    the random module). The user should then have 10 attempts at locating the circle (by clicking on the graphics
-    window). Each time (except the first) the user misses the circle, a "getting closer" or "getting further away"
-    message should be displayed (depending on the position of the current and previous clicks). If the user manages to
-    find the circle (by clicking within its circumference), then the circle should be displayed and the user given some
-    points: 10 points for finding it with the first click, down to 1 point for finding it with the 10th click. The game
-    then restarts. However, each time the game restarts the circle should be given a new random position and its radius
-    reduced by 10%. The game ends when the user fails to find the circle within 10 clicks. The total number of points
-    scored should then be displayed. Note: game is too hard with radius 30 circle so I've upped it to 60.
+    10. [harder] Write a find_the_circle() function to play a simple game. This
+    should start by displaying a graphics window, and creating (but not
+    displaying) a circle of radius 30 at a random position (use the randint
+    function from the random module). The user should then have 10 attempts at
+    locating the circle (by clicking on the graphics window). Each time (except
+    the first) the user misses the circle, a "getting closer" or "getting
+    further away" message should be displayed (depending on the position of the
+    current and previous clicks). If the user manages to find the circle (by
+    clicking within its circumference), then the circle should be displayed and
+    the user given some points: 10 points for finding it with the first click,
+    down to 1 point for finding it with the 10th click. The game then restarts.
+    However, each time the game restarts the circle should be given a new random
+    position and its radius reduced by 10%. The game ends when the user fails to
+    find the circle within 10 clicks. The total number of points scored should
+    then be displayed.
+
+    Note: game is too hard with radius 30 circle so I've upped it to 60.
     """
     win = GraphWin("Find the circle", 300, 440)
     score, radius, loss = 0, 60, False
@@ -429,40 +466,42 @@ def find_the_circle():
 
 
 if __name__ == "__main__":
-    funcs = [
-        get_name,
-        traffic_lights,
-        grade_coursework,
-        order_price,
-        clickable_eye,
-        temperature_converter,
-        guess_the_number,
-        table_tennis_scorer,
-        clickable_box_of_eyes,
-        find_the_circle,
-    ]
+    from inspect import cleandoc
+    import os
 
-    no_of_funcs = len(funcs)
-    print("".join(func.__doc__ for func in funcs))
+    funcs = []
+    for value in list(locals().values()):
+        if callable(value) and value.__module__ == __name__:
+            if "Helper" not in value.__doc__ and "Example" not in value.__doc__:
+                funcs.append(value)
+
+    func_count = len(funcs)
+
+    def print_func_names():
+        """Prints the index and name of all of the functions in this script."""
+        print("\nFunctions:")
+        for i, func in enumerate(funcs, start=1):
+            print(f"{i} {func.__name__}")
+
+    print_func_names()
 
     while True:
         try:
-            print("\nFunctions which have parameters will take arbitrary args")
-            func_number = int(input("Enter the number of the function to demo (0 to quit): "))
-
-            if func_number == 0:
+            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            if ans == 0:
                 print("Goodbye!")
                 break
-            elif func_number == 1:
-                print()
-                print(funcs[func_number - 1]())
-            elif func_number == 9:
-                print()
-                funcs[func_number - 1](8, 4)
-            elif 0 < func_number <= no_of_funcs:
-                print()
-                funcs[func_number - 1]()
+            elif 0 < ans <= func_count:
+                os.system("cls" if os.name == "nt" else "clear")
+                func = funcs[ans - 1]
+                print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
+
+                res = func()
+                if res is not None:
+                    print(res)
+
+                print_func_names()
             else:
-                raise ValueError
-        except Exception:
-            print("Invalid input")
+                raise ValueError("invalid: no such demo exists")
+        except ValueError as error:
+            print(error)
