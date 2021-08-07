@@ -52,8 +52,6 @@ if __name__ == "__main__":
         False,
     ]
 
-    # r, g, b = [randrange(0, 256) for _ in range(3)]
-
     for i, test_case in enumerate(test_cases):
         res = valid_color(test_case)
         print("[Pass]" if answers[i] == res else "[Fail]", res)
