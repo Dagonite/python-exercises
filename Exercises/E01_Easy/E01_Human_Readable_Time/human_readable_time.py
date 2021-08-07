@@ -14,7 +14,7 @@ def make_readable(seconds):
     hh = seconds // 3600
     mm = seconds // 60 % 60
     ss = seconds % 60
-    return "{:02}:{:02}:{:02}".format(hh, mm, ss)
+    return f"{hh:02}:{mm:02}:{ss:02}"
 
 
 if __name__ == "__main__":
