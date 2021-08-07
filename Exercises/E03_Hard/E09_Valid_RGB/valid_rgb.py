@@ -35,6 +35,8 @@ if __name__ == "__main__":
         "rgba(10, 40, 20, 0.5)",
         "rgba(90%, 20%, 0, 50%)",
         "rgba(120%, 200, 10, 1)",
+        "rgb 15, 15, 15",
+        "(30, 20, 10, 0.1)rgba",
     ]
 
     answers = [
@@ -44,6 +46,8 @@ if __name__ == "__main__":
         False,
         True,
         True,
+        False,
+        False,
         False,
         False,
     ]
