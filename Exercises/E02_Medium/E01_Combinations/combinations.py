@@ -1,11 +1,14 @@
-"""Create a function that takes a variable number of arguments, each argument representing the number of items in a 
-group, and returns the number of permutations (combinations) of items that you could get by taking one item from each 
-group. Some groups may contain 0 items, in which case ignore them."""
+"""
+Create a function that takes a variable number of arguments, each argument 
+representing the number of items in a group, and returns the number of 
+arrangements of items that you could get by taking one item from each group. 
+Some groups may contain 0 items, in which case ignore them.
+"""
 
 from functools import reduce
 
 
-def combinations(*items):
+def arrangement_count(*items):
     return reduce(lambda x, y: (1 if not x else x) * (1 if not y else y), items)
 
 
@@ -25,5 +28,5 @@ if __name__ == "__main__":
     ]
 
     for i, test_case in enumerate(test_cases):
-        res = combinations(*test_case)
+        res = arrangement_count(*test_case)
         print("[Pass]" if answers[i] == res else "[Fail]", res)

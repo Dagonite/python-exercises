@@ -1,12 +1,14 @@
-"""Create a function that takes two number strings and returns their sum as a string. If any input is "" or None, return 
-"Invalid Operation"."""
+"""
+Create a function that takes two number strings and returns their sum as a 
+string. If any input is '' or None, return 'Invalid Operation'.
+"""
 
 
 def add(a, b):
     try:
         return str(int(a) + int(b))
-    except:
-        return "Invalid Operation"
+    except ValueError:
+        return "invalid operation"
 
 
 if __name__ == "__main__":
@@ -23,9 +25,9 @@ if __name__ == "__main__":
         "10",
         "1",
         "-6",
-        "Invalid Operation",
-        "Invalid Operation",
-        "Invalid Operation",
+        "invalid operation",
+        "invalid operation",
+        "invalid operation",
     ]
 
     for i, test_case in enumerate(test_cases):

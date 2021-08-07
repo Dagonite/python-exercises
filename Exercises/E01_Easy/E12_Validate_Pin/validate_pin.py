@@ -1,5 +1,7 @@
-"""Create a function to test if a string is a valid pin or not. A valid pin has exactly 4 or 6 characters, only 
-numerical characters (0-9), and no whitespace."""
+"""
+Create a function to test if a string is a valid pin or not. A valid pin has 
+exactly 4 or 6 characters, only numerical characters (0-9), and no whitespace.
+"""
 
 
 def valid(txt):

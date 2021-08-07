@@ -1,4 +1,7 @@
-"""Create a function that returns the number of characters shared between two words."""
+"""
+Create a function that returns the number of characters shared between two 
+words.
+"""
 
 
 def shared_letters(str1, str2):

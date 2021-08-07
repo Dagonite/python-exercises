@@ -1,5 +1,7 @@
-"""Given a pattern followed by text blobs split by "|". Create a function which returns a string showing the number of 
-times the pattern is present in each blob and the total number of matches at the end.
+"""
+Given a pattern followed by text blobs split by "|". Create a function which 
+returns a string showing the number of times the pattern is present in each blob 
+and the total number of matches at the end.
 
 Input:
 "cc;cc|ccc|cac|ccacc|ccbaccc"

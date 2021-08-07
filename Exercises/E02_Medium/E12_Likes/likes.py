@@ -1,5 +1,8 @@
-"""Write a function that recreates the like system seen on blog posts. The function should take a list of names as 
-strings and return a string detailing who liked the post."""
+"""
+Write a function that recreates the like system seen on blog posts. The function 
+should take a list of names as strings and return a string detailing who liked 
+the post.
+"""
 
 
 def likes(names):

@@ -1,5 +1,7 @@
-"""Write a program that finds the index of two numbers in a sorted array that sum to a target. If no combination exists, 
-return [-1, -1, -1]."""
+"""
+Write a program that finds the index of two numbers in a sorted array that sum 
+to a target. If no combination exists, return [-1, -1, -1].
+"""
 
 
 def two_sum(arr, target):

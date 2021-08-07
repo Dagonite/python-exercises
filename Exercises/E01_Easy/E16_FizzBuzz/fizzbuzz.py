@@ -1,8 +1,8 @@
-"""Write a function that prints out FizzBuzz (1 - 100)."""
+"""Write a function that prints out FizzBuzz values 1 to 100."""
 
 
-def fizzbuzz(x):
-    for n in range(1, x + 1):
+def fizzbuzz():
+    for n in range(1, 101):
         output = ""
 
         if n % 3 == 0:
@@ -14,4 +14,4 @@ def fizzbuzz(x):
         print(output or n)
 
 
-fizzbuzz(100)
+fizzbuzz()

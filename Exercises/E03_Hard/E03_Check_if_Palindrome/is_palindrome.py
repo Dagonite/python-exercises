@@ -1,5 +1,7 @@
-"""Write a function which takes a string as an argument. The function should return True if the string is an alpha-
-numeric palindrome, else False."""
+"""
+Write a function which takes a string as an argument. The function should return 
+True if the string is an alpha-numeric palindrome, else False.
+"""
 
 
 def is_palindrome_1(line):

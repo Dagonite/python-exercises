@@ -1,5 +1,8 @@
-"""Assuming you have two integers, x and y, with y bigger than x. Sum all the numbers from x to y inclusively. Example: 
-if x is 1 and y is 5, then sum 1+2+3+4+5."""
+"""
+Assuming you have two integers, x and y, with y bigger than x. Sum all the 
+numbers from x to y inclusively. Example: if x is 1 and y is 5, then sum 
+1+2+3+4+5.
+"""
 
 
 def sbr_imp(x, y):
@@ -19,7 +22,7 @@ def sbr_reduce(x, y):
 
 def sbr_sum(x, y):
     "Sum between range using sum()."
-    return sum([n for n in range(x, y + 1)])
+    return sum([*range(x, y + 1)])
 
 
 if __name__ == "__main__":

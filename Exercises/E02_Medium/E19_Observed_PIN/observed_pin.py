@@ -1,4 +1,5 @@
-"""A keypad has the following layout:
+"""
+A keypad has the following layout:
 
 ┌───┬───┬───┐
 │ 1 │ 2 │ 3 │
@@ -10,9 +11,11 @@
     │ 0 │
     └───┘
     
-A PIN as been observed as 1357, however it is possible that each of the digits could actually be another adjacent digit
-(horizontally or vertically, but not diagonally). E.g. instead of the 1 it could also be the 2 or 4. Giving a PIN as a
-string, return a list of all possible variations of the PIN."""
+A PIN as been observed as 1357, however it is possible that each of the digits 
+could actually be another adjacent digit (horizontally or vertically, but not 
+diagonally). E.g. instead of the 1 it could also be the 2 or 4. Giving a PIN as 
+a string, return a list of all possible variations of the PIN.
+"""
 
 from itertools import product
 
@@ -32,11 +35,11 @@ NEIGHBOURS = {
 
 def get_pins(observed):
     """
-    Solution that gets all the possible products using the value of each digit adjacent to the key (including the
-    key's digit too).
+    Solution that gets all the possible products using the value of each digit
+    adjacent to the key (including the key's digit too).
 
-    Another possible solution is to just have a list of strings of the adjacent digits and use the observed PIN as
-    indices for the list.
+    Another possible solution is to just have a list of strings of the adjacent
+    digits and use the observed PIN as indices for the list.
     """
     return ["".join(digits) for digits in product(*(NEIGHBOURS[digit] for digit in observed))]
 

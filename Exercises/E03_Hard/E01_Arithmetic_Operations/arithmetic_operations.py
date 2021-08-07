@@ -1,5 +1,7 @@
-"""Create a function to perform basic arithmetic operations (addition, subtraction, multiplication, and division) on a 
-string equation (e.g. "12 + 24" returns 36)."""
+"""
+Create a function to perform basic arithmetic operations (addition, subtraction, 
+multiplication, and division) on a string equation (e.g. "12 + 24" returns 36).
+"""
 
 from operator import add, sub, floordiv, mul
 

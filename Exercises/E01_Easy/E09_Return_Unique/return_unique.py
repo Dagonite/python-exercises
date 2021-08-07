@@ -1,5 +1,7 @@
-"""In each input list, every number repeats at least once, except for two. Write a function that returns the two unique 
-numbers."""
+"""
+In each input list, every number repeats at least once, except for two. Write 
+a function that returns the two unique numbers.
+"""
 
 
 def return_unique(lst):

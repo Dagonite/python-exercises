@@ -1,10 +1,13 @@
-"""Create a function that builds a word from the scrambled letters contained in the first list. Use the second list to 
-establish each position of the letters in the first list. Return a string from the unscrambled letters (that made-up the 
-word)."""
+"""
+Create a function that builds a word from the scrambled letters contained in the 
+first list. Use the second list to establish each position of the letters in the 
+first list. Return a string from the unscrambled letters (that made-up the 
+word).
+"""
 
 
-def word_builder(ltr, pos):
-    return "".join(ltr[i] for i in pos)
+def word_builder(letters, indexes):
+    return "".join(letters[i] for i in indexes)
 
 
 if __name__ == "__main__":

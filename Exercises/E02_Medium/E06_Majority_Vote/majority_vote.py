@@ -1,5 +1,8 @@
-"""Create a function that returns the majority vote in a list. A majority vote is an element that occurs > n/2 times in 
-a list (where n is the length of the list). If the list is empty or there is no majority, return None."""
+"""
+Create a function that returns the majority vote in a list. A majority vote is 
+an element that occurs > n/2 times in a list (where n is the length of the 
+list). If the list is empty or there is no majority, return None.
+"""
 
 
 def majority_vote(votes):

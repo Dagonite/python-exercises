@@ -1,6 +1,8 @@
-"""Create a class, Employee, that will take a full name as an argument, as well as zero or more keywords. Each instance 
-should have name and lastname attributes, plus attributes for each keyword (if any)."""
-# pylint: disable=no-member
+"""
+Create a class, Employee, that will take a full name as an argument, as well as 
+zero or more keywords. Each instance should have name and lastname attributes, 
+plus attributes for each keyword (if any).
+"""
 
 
 class Employee:
