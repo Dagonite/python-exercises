@@ -26,8 +26,6 @@ def valid_color(color):
 
 
 if __name__ == "__main__":
-    from random import randrange
-
     test_cases = [
         "rgb(100, 200, 50)",
         "rgb(20, 30, 60)",
