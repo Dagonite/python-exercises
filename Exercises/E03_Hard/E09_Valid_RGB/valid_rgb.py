@@ -19,7 +19,7 @@ def valid_color(color):
         return _rgb(r, g, b) and 0 <= a <= 1
 
     try:
-        nospace = "rgb" in color or "rgba" in color
+        nospace = "rgb(" in color or "rgba(" in color
         return nospace and eval("_" + color.replace("%", "*2.55"))
     except (SyntaxError, TypeError):
         return False
