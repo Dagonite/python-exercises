@@ -33,7 +33,7 @@ class Position:
 
     def __format__(self, format_spec):
         component_format_spec = ".2f"
-        prefix, dot, suffix = format_spec.partition(".")
+        _, dot, suffix = format_spec.partition(".")
         if dot:
             num_decimal_places = int(suffix)
             component_format_spec = f".{num_decimal_places}f"
