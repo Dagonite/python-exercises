@@ -64,7 +64,7 @@ class Location:
 
 
 if __name__ == "__main__":
-    # can't initiate the class with empty name
+    # can't initiate the class with an empty name
     try:
         no_name = Location("", EarthPosition(22.29, 114.16))
     except ValueError as exc:
@@ -72,5 +72,5 @@ if __name__ == "__main__":
 
     stockholm = Location("Stockholm", EarthPosition(59.33, 18.06))
 
-    # Location dataclass is frozen so can't change name
+    # Location dataclass is frozen so can't change name either
     stockholm.name = ""
