@@ -1,4 +1,3 @@
-from position import EarthPosition
 from utility import auto_repr
 
 
