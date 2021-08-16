@@ -19,13 +19,13 @@ def auto_repr(cls):
 
     if not all(isinstance(members.get(name, None), property) for name in parameter_names):
         raise TypeError(
-            f"Cannot apply auto_repr to {cls.__name__} because not all " "__init__ parameters have matching properties"
+            f"Cannot apply auto_repr to {cls.__name__} because not all __init__ parameters have matching properties"
         )
 
     def synthesized_repr(self):
         return "{typename}({args})".format(
             typename=typename(self),
-            args=", ".join("{name}={value!r}".format(name=name, value=getattr(self, name)) for name in parameter_names),
+            args=", ".join(f"{name}={getattr(self, name)!r}" for name in parameter_names),
         )
 
     setattr(cls, "__repr__", synthesized_repr)
