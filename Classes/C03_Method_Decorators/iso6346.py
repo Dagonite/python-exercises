@@ -1,6 +1,4 @@
-"""
-ISO 6346 shipping container codes.
-"""
+"""ISO 6346 shipping container codes."""
 
 
 def create(owner_code, serial, category="U"):
