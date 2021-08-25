@@ -2,7 +2,10 @@ import matplotlib.pyplot as plt
 
 
 def collatz_conjecture(x):
-    """Return a list of values that make up a single Collatz conjecture sequence, with 'x' being the start value"""
+    """
+    Return a list of values that make up a single Collatz conjecture sequence,
+    with 'x' being the start value.
+    """
     values = []
 
     def calc(x):
