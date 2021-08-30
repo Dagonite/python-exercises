@@ -6,6 +6,9 @@ and the total number of matches at the end.
 Input:
 "cc;cc|ccc|cac|ccacc|ccbaccc"
 
+Where "cc" is the pattern.
+And "cc", "ccc", "cac", "ccacc", and "ccbaccc" are the text blobs.
+
 Output:
 "1|2|0|2|3|8"
 """
