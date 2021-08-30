@@ -8,18 +8,16 @@ You had to multiply 3 times so you return 3. The integer 999 would return 4.
 """
 
 from functools import reduce
+from operator import mul
 
 
 def multiplicative_persistence(n):
-    sum_n = n
-    no_of_splits = 0
-    while True:
-        if sum_n < 10:
-            break
-        split_n = list(str(sum_n))
-        sum_n = reduce(lambda x, y: int(x) * int(y), split_n)
-        no_of_splits += 1
-    return no_of_splits
+    splits = 0
+    while n >= 10:
+        n = reduce(mul, [int(x) for x in str(n)], 1)
+        splits += 1
+
+    return splits
 
 
 if __name__ == "__main__":
