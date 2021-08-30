@@ -3,6 +3,13 @@ Write a function that takes a string of at least 3 characters comprising of 'X's
 and '.'s. The function should return the smallest number of changes that would 
 be needed to make every character a dot. Up to three connected 'X's can be
 converted at once.
+
+For example, convert_xs("X.X.XX.XXXX") should return 5:
+1) "..X.XX.XXXX"
+2) "....XX.XXXX"
+3) ".......XXXX"
+4) "..........X"
+5) "..........."
 """
 
 from math import ceil
