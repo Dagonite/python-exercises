@@ -1,5 +1,5 @@
 """
-Write a function, which takes a non-negative integer (seconds) as input and 
+Write a function, which takes a non-negative integer (seconds) as input and
 returns the time in a human-readable format (HH:MM:SS).
 
 HH = hours, padded to 2 digits, range: 00 - 99
