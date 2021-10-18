@@ -1,5 +1,5 @@
 """
-Write a function that takes an array of strings and finds the maximum length of 
+Write a function that takes an array of strings and finds the maximum length of
 a concatenated string of unique characters.
 """
 
@@ -10,10 +10,12 @@ def max_length(arr):
         if len(set(word)) < len(word):
             continue
         word = set(word)
+
         for next_word in dp[:]:
             if word & next_word:
                 continue
             dp.append(word | next_word)
+
     return max(len(word) for word in dp)
 
 

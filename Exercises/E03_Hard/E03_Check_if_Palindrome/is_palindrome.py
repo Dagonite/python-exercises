@@ -1,5 +1,5 @@
 """
-Write a function which takes a string as an argument. The function should return 
+Write a function which takes a string as an argument. The function should return
 True if the string is an alpha-numeric palindrome, else False.
 """
 
@@ -19,6 +19,7 @@ def is_palindrome_1(line):
 
         i += 1
         j -= 1
+
     return True
 
 
@@ -27,8 +28,13 @@ def is_palindrome_2(line):
     return raw_line == raw_line[::-1]
 
 
-with open("palindromes.txt", "r") as f:
-    lines = f.readlines()
+def main():
+    with open("palindromes.txt", "r", encoding="utf_8") as f:
+        lines = f.readlines()
 
-for line in lines:
-    print("{:<34}{}".format(line[:-1], is_palindrome_2(line)))
+    for line in lines:
+        print(f"{line[:-1]:<34}{is_palindrome_2(line)}")
+
+
+if __name__ == "__main__":
+    main()

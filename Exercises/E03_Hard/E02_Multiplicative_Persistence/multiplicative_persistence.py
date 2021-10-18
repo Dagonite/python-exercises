@@ -1,7 +1,7 @@
 """
-Write a function that takes in a positive integer and returns its multiplicative 
-persistence, which is the number of times you must multiply the digits in the 
-integer until you reach a single digit. 
+Write a function that takes in a positive integer and returns its multiplicative
+persistence, which is the number of times you must multiply the digits in the
+integer until you reach a single digit.
 
 For example, 39 should return 3:
 3 * 9 = 27

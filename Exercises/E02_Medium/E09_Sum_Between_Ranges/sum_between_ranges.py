@@ -1,6 +1,6 @@
 """
-Assuming you have two integers, x and y, with y bigger than x. Sum all the 
-numbers from x to y inclusively. Example: if x is 1 and y is 5, then sum 
+Assuming you have two integers, x and y, with y bigger than x. Sum all the
+numbers from x to y inclusively. Example: if x is 1 and y is 5, then sum
 1+2+3+4+5.
 """
 
@@ -15,8 +15,6 @@ def sbr_imp(x, y):
 
 def sbr_reduce(x, y):
     """Sum between range using reduce() and lambda."""
-    from functools import reduce
-
     return reduce(lambda n, m: n + m, range(x, y + 1))
 
 
@@ -26,6 +24,8 @@ def sbr_sum(x, y):
 
 
 if __name__ == "__main__":
+    from functools import reduce
+
     sbr_funcs = [
         sbr_imp,
         sbr_reduce,

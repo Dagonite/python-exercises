@@ -1,6 +1,6 @@
 """
-Create a function that takes an integer, n, and returns 'Fizz' if it is a 
-multiple of 3, 'Buzz' if it is a multiple of 5, 'FizzBuzz' if it is a multiple 
+Create a function that takes an integer, n, and returns 'Fizz' if it is a
+multiple of 3, 'Buzz' if it is a multiple of 5, 'FizzBuzz' if it is a multiple
 of both, or n as a string if neither.
 """
 

@@ -1,6 +1,6 @@
 """
-Create a class, Employee, that will take a full name as an argument, as well as 
-zero or more keywords. Each instance should have name and lastname attributes, 
+Create a class, Employee, that will take a full name as an argument, as well as
+zero or more keywords. Each instance should have name and lastname attributes,
 plus attributes for each keyword (if any).
 """
 
@@ -12,7 +12,7 @@ class Employee:
             setattr(self, key, value)
 
 
-if __name__ == "__main__":
+def main():
     adam = Employee("Adam Tabett")
     mary = Employee("Mary Howlette", salary=34000)
     john = Employee("John Rico", salary=65000, height=178)
@@ -31,3 +31,7 @@ if __name__ == "__main__":
         for key, value in data.items():
             attribute = getattr(person, key)
             print("[PASS]" if attribute == value else "[FAIL]", f"{data['name'].lower()}.{key} = {attribute}")
+
+
+if __name__ == "__main__":
+    main()

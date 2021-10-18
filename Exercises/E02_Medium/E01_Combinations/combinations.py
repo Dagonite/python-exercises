@@ -1,7 +1,7 @@
 """
-Create a function that takes a variable number of arguments, each argument 
-representing the number of items in a group, and returns the number of 
-arrangements of items that you could get by taking one item from each group. 
+Create a function that takes a variable number of arguments, each argument
+representing the number of items in a group, and returns the number of
+arrangements of items that you could get by taking one item from each group.
 Some groups may contain 0 items, in which case ignore them.
 """
 
@@ -13,6 +13,7 @@ def arrangement_count(*items):
 
 
 if __name__ == "__main__":
+
     test_cases = [
         (2, 0, 6, 0, 5),
         (0, 2, 3, 4, 0, 5),

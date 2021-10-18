@@ -10,10 +10,10 @@ A keypad has the following layout:
 └───┼───┼───┘
     │ 0 │
     └───┘
-    
-A PIN as been observed as 1357, however it is possible that each of the digits 
-could actually be another adjacent digit (horizontally or vertically, but not 
-diagonally). E.g. instead of the 1 it could also be the 2 or 4. Giving a PIN as 
+
+A PIN as been observed as 1357, however it is possible that each of the digits
+could actually be another adjacent digit (horizontally or vertically, but not
+diagonally). E.g. instead of the 1 it could also be the 2 or 4. Giving a PIN as
 a string, return a list of all possible variations of the PIN.
 """
 

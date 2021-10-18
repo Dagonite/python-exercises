@@ -9,7 +9,7 @@ def running_sum(nums):
     return nums
 
 
-if __name__ == "__main__":
+def main():
     test_cases = [[1, 2, 3, 4], [4, 5, 12, 11]]
 
     answers = [[1, 3, 6, 10], [4, 9, 21, 32]]
@@ -17,3 +17,7 @@ if __name__ == "__main__":
     for i, test_case in enumerate(test_cases):
         res = running_sum(test_case)
         print("[Pass]" if answers[i] == res else "[Fail]", res)
+
+
+if __name__ == "__main__":
+    main()

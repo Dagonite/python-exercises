@@ -20,7 +20,7 @@ def three_sum(arr, target):
     return [-1, -1, -1]
 
 
-if __name__ == "__main__":
+def main():
     test_cases = [
         ([1, 2, 2, 3, 4], 5),
         ([1, 4, 5, 5, 6, 11], 18),
@@ -40,3 +40,7 @@ if __name__ == "__main__":
     for i, test_case in enumerate(test_cases):
         res = three_sum(test_case[0], test_case[1])
         print([answers[i] == res], res)
+
+
+if __name__ == "__main__":
+    main()

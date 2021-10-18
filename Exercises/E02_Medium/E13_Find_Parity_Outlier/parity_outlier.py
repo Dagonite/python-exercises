@@ -1,5 +1,5 @@
 """
-Write a function that takes a list of at least 3 numbers. The function must 
+Write a function that takes a list of at least 3 numbers. The function must
 return the single odd or even number in the list.
 """
 

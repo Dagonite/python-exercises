@@ -1,7 +1,5 @@
 """Given a range of numbers from 1 to 100, print multiples of 3 in a list."""
 
-from functools import reduce
-
 numbers = range(1, 101)
 
 # imperatively using modulo

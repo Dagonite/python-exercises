@@ -1,7 +1,7 @@
 """
-Implement a function which takes a list of temperatures ts and returns the 
-temperature closest to 0. If the list is empty, the function should return 0. If 
-two temperatures are equally close to zero, the positive temperature must be 
+Implement a function which takes a list of temperatures ts and returns the
+temperature closest to 0. If the list is empty, the function should return 0. If
+two temperatures are equally close to zero, the positive temperature must be
 returned. For example, if the input is -5 and 5, then 5 must be returned.
 """
 
@@ -25,7 +25,7 @@ def compute_closest_to_zero(ts):
 
         return closest
 
-    except:
+    except IndexError:
         # return 0 if ts empty
         return 0
 

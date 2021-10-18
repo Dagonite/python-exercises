@@ -1,7 +1,7 @@
 """
-Write a function that takes a string containing 3 numbers: A, B, and N. The 
-function should print integers 1 to N but for integers that are multiples of A, 
-print 'F' and for multiples of B, print 'B'. For multiples of both A and B, 
+Write a function that takes a string containing 3 numbers: A, B, and N. The
+function should print integers 1 to N but for integers that are multiples of A,
+print 'F' and for multiples of B, print 'B'. For multiples of both A and B,
 print 'FB'.
 """
 

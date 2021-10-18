@@ -1,5 +1,5 @@
 """
-Make a standard deck of cards, shuffle the deck, and then draw two cards at 
+Make a standard deck of cards, shuffle the deck, and then draw two cards at
 random. Print the two cards.
 """
 

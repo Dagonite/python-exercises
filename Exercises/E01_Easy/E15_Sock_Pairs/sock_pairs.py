@@ -1,5 +1,5 @@
 """
-There is a large pile of socks that must be paired by color. Write a function 
+There is a large pile of socks that must be paired by color. Write a function
 that takes an array of integers representing the colour of each sock and return
 how many pairs of socks with matching colors there are.
 """

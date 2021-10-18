@@ -1,5 +1,5 @@
 """
-Given a list of numbers, write a function to find the number in the list that 
+Given a list of numbers, write a function to find the number in the list that
 appears an odd number of times.
 """
 
@@ -20,8 +20,8 @@ def find_odd_occurrence_2(seq):
     Solution using the xor operator and reduce(). Exclusive or is commutative,
     which results in an odd occurence of a number in a sequence not being
     cancelled out when being reduced. Problem with reduce() is that there's
-    quite a bit overhead as the lambda func is getting called for every element
-    in the sequence.
+    quite a bit of overhead as the lambda func is getting called for every
+    element in the sequence.
     """
     return reduce(lambda x, y: x ^ y, seq)
 
@@ -37,10 +37,8 @@ def find_odd_occurrence_3(seq):
     return x
 
 
-if __name__ == "__main__":
-    from random import randrange, shuffle
-    from timing import timed_func  # timing can be found in my `python-sorting-algorithms` repo
-
+def main():
+    """Entry point."""
     solutions = [
         find_odd_occurrence_1,
         find_odd_occurrence_2,
@@ -48,7 +46,7 @@ if __name__ == "__main__":
     ]
 
     test_cases = []
-    for i in range(5):
+    for _ in range(5):
         n = randrange(1, 10)
         seq = [randrange(1, 10) for _ in range(1, 8000)] * 2 + [n] * randrange(1, 2000, 2)
         shuffle(seq)
@@ -61,3 +59,10 @@ if __name__ == "__main__":
             res, seconds = solution(test_case)
             print(f"{res}, that took {seconds:.6f}s")
         print()
+
+
+if __name__ == "__main__":
+    from random import randrange, shuffle
+    from timing import timed_func  # timing can be found in my `python-sorting-algorithms` repo
+
+    main()

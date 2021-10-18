@@ -1,5 +1,5 @@
 """
-Write a function which returns how many uppercase letters there are in a list of 
+Write a function which returns how many uppercase letters there are in a list of
 various words.
 """
 

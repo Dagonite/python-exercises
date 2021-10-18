@@ -1,6 +1,6 @@
 """
-Write a function that takes a string of DNA symbols and returns the 
-complementary DNA as a string. 'A' and 'T' are complements of each other, as are 
+Write a function that takes a string of DNA symbols and returns the
+complementary DNA as a string. 'A' and 'T' are complements of each other, as are
 'C' and 'G'.
 """
 

@@ -1,5 +1,5 @@
 """
-Create functions so that function calls like seven(times(five())) return the 
+Create functions so that function calls like `seven(times(five()))` return the
 expected integer.
 """
 

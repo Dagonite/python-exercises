@@ -1,7 +1,7 @@
 """
-Create a function that builds a word from the scrambled letters contained in the 
-first list. Use the second list to establish each position of the letters in the 
-first list. Return a string from the unscrambled letters (that made-up the 
+Create a function that builds a word from the scrambled letters contained in the
+first list. Use the second list to establish each position of the letters in the
+first list. Return a string from the unscrambled letters (that made-up the
 word).
 """
 

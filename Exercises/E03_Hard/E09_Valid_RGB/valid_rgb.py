@@ -1,6 +1,6 @@
 """
-Given an RGB(A) CSS color, determine whether its format is valid or not. Create 
-a function that takes a string (e.g. rgb(0, 0, 0)) and returns True if the 
+Given an RGB(A) CSS color, determine whether its format is valid or not. Create
+a function that takes a string (e.g. rgb(0, 0, 0)) and returns True if the
 format is correct, otherwise False.
 
 RGB values must be values between 0 and 255 (inclusive) or a percentage between
