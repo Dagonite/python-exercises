@@ -1,8 +1,9 @@
+# pylint:disable=protected-access
 import functools
 import inspect
 
 from location import Location
-from position import EarthPosition, MarsPosition
+from position import EarthPosition
 from utility import auto_repr
 
 
