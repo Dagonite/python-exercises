@@ -16,10 +16,10 @@ def create(owner_code, serial, category="U"):
         ValueError: If incorrect values are provided.
     """
     if not (len(owner_code) == 3 and owner_code.isalpha()):
-        raise ValueError("Invalid ISO 6346 owner code '{}'".format(owner_code))
+        raise ValueError(f"Invalid ISO 6346 owner code '{owner_code}'")
 
     if category not in ("U", "J", "Z", "R"):
-        raise ValueError("Invalid ISO 6346 category identifier '{}'".format(category))
+        raise ValueError(f"Invalid ISO 6346 category identifier '{category}'")
 
     if not (len(serial) == 6 and serial.isdigit()):
         raise ValueError("Invalid ISO 6346 serial number")

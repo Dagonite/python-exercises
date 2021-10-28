@@ -1,10 +1,10 @@
 """
-When using kwargs for a class constructor; the created attributes are public and 
-immutable. Because we don't know the attribute names in advance we can't use the 
-property decorator. Can work around this by using the dunder getattr and dunder 
+When using kwargs for a class constructor; the created attributes are public and
+immutable. Because we don't know the attribute names in advance we can't use the
+property decorator. Can work around this by using the dunder getattr and dunder
 setattr methods.
 """
-
+# pylint:disable=broad-except,attribute-defined-outside-init
 import traceback
 
 
@@ -19,17 +19,17 @@ class Vector:
         private_name = f"_{name}"
         try:
             return self.__dict__[private_name]
-        except KeyError:
-            raise AttributeError(f"{self!r} object has no attribute {name!r}")
+        except KeyError as invalid_key:
+            raise AttributeError(f"{self!r} object has no attribute {name!r}") from invalid_key
 
-    def __setattr__(self, name, value) -> None:
+    def __setattr__(self, name, _) -> None:
         raise AttributeError(f"Can't set attribute {name!r}")
 
     def __delattr__(self, name):
         raise AttributeError(f"Can't delete attribute {name!r}")
 
     def __repr__(self):
-        return f"{type(self).__name__}" + "({})".format(", ".join(f"{k[1:]}={v}" for k, v in self.__dict__.items()))
+        return f"{type(self).__name__}({', '.join(f'{k[1:]}={v}' for k, v in self.__dict__.items())})"
 
     def _args(self):
         return {k[1:]: v for k, v in self.__dict__.items()}

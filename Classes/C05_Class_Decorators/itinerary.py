@@ -13,7 +13,7 @@ def postcondition(predicate):
         def wrapper(self, *args, **kwargs):
             result = f(self, *args, **kwargs)
             if not predicate(self):
-                raise RuntimeError(f"Post-condition {predicate.__name__} not " f"maintained for {self!r}")
+                raise RuntimeError(f"Post-condition {predicate.__name__} not maintained for {self!r}")
             return result
 
         return wrapper
@@ -44,7 +44,9 @@ def no_duplicates(itinerary):
     for location in itinerary._locations:
         if location in already_seen:
             return False
+
         already_seen.add(location)
+
     return True
 
 
