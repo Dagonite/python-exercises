@@ -86,7 +86,7 @@ def graphic_letters():
         message = Text(position, ch).draw(win)
         message.setSize(20)
 
-    win.getMouse
+    win.getMouse()
     win.close()
 
 

@@ -5,6 +5,7 @@ property decorator. Can work around this by using the dunder getattr and dunder
 setattr methods.
 """
 # pylint:disable=broad-except,attribute-defined-outside-init
+
 import traceback
 
 

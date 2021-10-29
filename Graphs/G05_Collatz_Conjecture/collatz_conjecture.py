@@ -15,8 +15,8 @@ def collatz_conjecture(x):
 
         if x % 2:
             return calc(3 * x + 1)
-        else:
-            return calc(x / 2)
+
+        return calc(x / 2)
 
     return calc(x)
 
