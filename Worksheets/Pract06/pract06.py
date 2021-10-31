@@ -22,7 +22,7 @@ def fast_food_order_price():
     price = float(input("Enter the price of the food order > "))
     if price < 10:
         price += 1.50
-    print("The total price of your order is £{price:.2f}")
+    print(f"The total price of your order is £{price:.2f}")
 
 
 def what_to_do_today():
