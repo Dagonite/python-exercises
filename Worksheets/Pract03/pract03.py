@@ -1,9 +1,13 @@
 "Practical Worksheet 3: Graphical Programming"
+# pylint:disable=too-many-locals
 # Coordinates within a graphics window can be transformed like so:
 # win = GraphWin("Coordinate transformations", 330, 160)
 # win.setCoords(0, 0, 1, 1)
 
 import math
+import os
+from inspect import cleandoc
+from tkinter import TclError
 
 from graphics import Circle, Entry, GraphWin, Line, Point, Rectangle, Text
 
@@ -101,9 +105,9 @@ def draw_rectangle():
     await_user_input(win)
 
 
-def blue_circle():
+def draw_blue_circle():
     """
-    5. Write a function, blue_circle(), that allows the user to draw a blue
+    5. Write a function, draw_blue_circle(), that allows the user to draw a blue
     circle of radius 50 by clicking the location of its centre on the window.
     """
     win = GraphWin("Blue Circle")
@@ -213,7 +217,7 @@ def ten_coloured_rectangles():
 
         try:
             rectangle.setFill(input_box.getText())
-        except:
+        except TclError:
             rectangle.setFill("")
 
         input_box.setText("")
@@ -307,16 +311,19 @@ def plot_rainfall():
     await_user_input(win)
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = []
-    for value in list(locals().values()):
-        if callable(value) and value.__module__ == __name__:
-            if "Helper" not in value.__doc__:
-                funcs.append(value)
-
+def main():
+    funcs = [
+        draw_stick_figure,
+        draw_circle,
+        draw_archery_target,
+        draw_rectangle,
+        draw_blue_circle,
+        ten_lines,
+        ten_strings,
+        ten_coloured_rectangles,
+        five_click_stick_figure,
+        plot_rainfall,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -329,11 +336,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -343,3 +350,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

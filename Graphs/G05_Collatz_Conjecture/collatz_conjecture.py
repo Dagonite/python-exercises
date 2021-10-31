@@ -21,21 +21,26 @@ def collatz_conjecture(x):
     return calc(x)
 
 
-# setup the graph
-plt.style.use("seaborn")
-fig, ax = plt.subplots()
+def main():
+    # setup the graph
+    plt.style.use("seaborn")
+    fig, ax = plt.subplots()
 
-# plot the lines
-for x in range(1, 1001):
-    y = collatz_conjecture(x)
-    ax.plot(range(1, len(y) + 1), y, linewidth=2)
+    # plot the lines
+    for x in range(1, 1001):
+        y = collatz_conjecture(x)
+        ax.plot(range(1, len(y) + 1), y, linewidth=2)
 
-# set chart title and label axes
-ax.set_title("Collatz Conjecture", fontsize=20)
-ax.set_xlabel("Iterations", fontsize=14)
-ax.set_ylabel("Values", fontsize=14)
+    # set chart title and label axes
+    ax.set_title("Collatz Conjecture", fontsize=20)
+    ax.set_xlabel("Iterations", fontsize=14)
+    ax.set_ylabel("Values", fontsize=14)
 
-# set size of tick labels
-ax.tick_params(axis="both", labelsize=12)
+    # set size of tick labels
+    ax.tick_params(axis="both", labelsize=12)
 
-plt.savefig("collatz.png", bbox_inches="tight")
+    plt.savefig("collatz.png", bbox_inches="tight")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,12 +1,14 @@
 """Practical Worksheet 7: Using Booleans and While Loops"""
 
+import os
 import random
 import time
+from inspect import cleandoc
 
 from graphics import Circle, GraphWin, Line, Point, Rectangle, Text, color_rgb
 
-from pract05 import distance_between_points, draw_brown_eye, draw_circle
-from pract06 import calculate_grade
+from Pract05.pract05 import distance_between_points, draw_brown_eye, draw_circle
+from Pract06.pract06 import calculate_grade
 
 
 def get_name():
@@ -116,7 +118,7 @@ def order_price():
         total += unit_price * quantity
 
     if total > 0:
-        print("The order price is £{:.2f}".format(total))
+        print("The order price is £{total:.2f}")
 
 
 def clickable_eye():
@@ -150,7 +152,7 @@ def clickable_eye():
         if choice_zone > radius:
             win.close()
             break
-        elif choice_zone >= radius / 2 and choice_zone <= radius:
+        if choice_zone >= radius / 2 and choice_zone <= radius:
             zone_text.setText("Sclera")
         elif choice_zone >= radius / 4 and choice_zone <= radius / 2:
             zone_text.setText("Iris")
@@ -169,10 +171,8 @@ def temperature_converter():
     conversion.
     """
     while True:
-        conv_type = input(
-            "Enter 'ftc' for Fahrenheit-to-Celcius, 'ctf' for Celsius-to-Fahrenheit, or 'q' to quit: "
-        ).lower()
-        if conv_type == "ftc" or conv_type == "ctf":
+        conv_type = input("Enter 'ftc' for Fahrenheit-to-Celcius, 'ctf' for vice versa, or 'q' to quit: ").lower()
+        if conv_type in ("ftc", "ctf"):
             while True:
                 temperature = input("Enter the temperature in degrees (whole " "number): ")
                 if temperature.isdigit():
@@ -184,8 +184,7 @@ def temperature_converter():
                         txt = "{0}°C is equivalent to {1}°F"
                     print(txt.format(temperature, result))
                     break
-                else:
-                    print("Error: Invalid answer")
+                print("Error: Invalid answer")
         elif conv_type == "q":
             break
         else:
@@ -334,7 +333,7 @@ def clickable_box_of_eyes(cols=None, rows=None):
         if col == 0 or row == 0 or col == b_and_cols or row == b_and_rows:
             win.close()
             break
-        elif distance_between_points(cursor, Point(col, row)) > 0.5:
+        if distance_between_points(cursor, Point(col, row)) > 0.5:
             message.setText("Between eye")
         else:
             message.setText(f"Eye at row {row}, column {col}")
@@ -438,7 +437,8 @@ def find_the_circle():
                 points_text.setText("")
                 score_text.setText(("Score:", score))
                 break
-            elif i == 1:
+
+            if i == 1:
                 status_text.setText("Click 1: missed")
             elif distances[i - 1] > distances[i - 2]:
                 status_text.setText(f"Click {i}: further away")
@@ -465,16 +465,19 @@ def find_the_circle():
     win.close()
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = []
-    for value in list(locals().values()):
-        if callable(value) and value.__module__ == __name__:
-            if "Helper" not in value.__doc__ and "Example" not in value.__doc__:
-                funcs.append(value)
-
+def main():
+    funcs = [
+        get_name,
+        traffic_lights,
+        grade_coursework,
+        order_price,
+        clickable_eye,
+        temperature_converter,
+        guess_the_number,
+        table_tennis_scorer,
+        clickable_box_of_eyes,
+        find_the_circle,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -487,11 +490,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -505,3 +508,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

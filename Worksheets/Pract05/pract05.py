@@ -1,6 +1,8 @@
 """Practical Worksheet 5: Using functions"""
 
 import math
+import os
+from inspect import cleandoc
 
 from graphics import Circle, GraphWin, Line, Point, Text
 
@@ -141,11 +143,12 @@ def distance_between_points(p1=None, p2=None):
     Hint: you'll need to use the getX and getY methods to get the x and y
     coordinates of points p1 and p2.
     """
-    if p1 is None or p2 is None:
+    if p1 is None:
         x1 = float(input("Enter x of p1 > "))
         y1 = float(input("Enter y of p1 > "))
         p1 = Point(x1, y1)
 
+    if p2 is None:
         x2 = float(input("Enter x of p2 > "))
         y2 = float(input("Enter y of p2 > "))
         p2 = Point(x2, y2)
@@ -345,16 +348,19 @@ def draw_stick_figure(win, position, size):
     Line(Point(posX, posY + size * 3), Point(posX + size, posY + size * 5)).draw(win)
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = []
-    for value in list(locals().values()):
-        if callable(value) and value.__module__ == __name__:
-            if "Helper" not in value.__doc__ and "Example" not in value.__doc__:
-                funcs.append(value)
-
+def main():
+    funcs = [
+        circumference_of_circle,
+        circle_info,
+        draw_brown_eye_in_centre,
+        draw_letter_E,
+        draw_pair_of_brown_eyes,
+        distance_between_points,
+        draw_letter_A,
+        draw_four_pairs_of_brown_eyes,
+        construct_vision_chart,
+        draw_stick_figure_family,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -367,11 +373,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -385,3 +391,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

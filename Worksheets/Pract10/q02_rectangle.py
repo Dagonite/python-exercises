@@ -8,9 +8,9 @@ class Rectangle:
     __init__(height, width). The user will require three things to be
     calculated:
 
-    -the area calculate_area()
-    -the perimeter calculate_perimeter()
-    -the diagonal length between opposing corners calculate_diagonal_length()
+    - the area calculate_area()
+    - the perimeter calculate_perimeter()
+    - the diagonal length between opposing corners calculate_diagonal_length()
 
     Also a method which will print all the information relating to the rectangle
     retrieve_information().

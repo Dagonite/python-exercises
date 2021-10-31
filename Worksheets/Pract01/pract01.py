@@ -1,5 +1,8 @@
 """Practical Worksheet 1: Getting started with Python"""
 
+import os
+from inspect import cleandoc
+
 
 def say_name():
     """1. Write a function, say_name(), that displays your name."""
@@ -101,11 +104,18 @@ def future_value():
     print(f"Investing £{investment:.2f} for {years} years will result in £{return_amount:.2f}")
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = [value for _, value in locals().items() if callable(value) and value.__module__ == __name__]
+def main():
+    funcs = [
+        say_name,
+        say_hello_world,
+        euros_to_pounds,
+        add_up,
+        change_counter,
+        ten_hellos,
+        count,
+        weights_table,
+        future_value,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -118,11 +128,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -132,3 +142,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

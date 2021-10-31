@@ -1,4 +1,8 @@
 """Practical Worksheet 4: Strings and Files"""
+# pylint:disable=eval-used
+
+import os
+from inspect import cleandoc
 
 from graphics import GraphWin, Line, Point, Rectangle, Text
 
@@ -160,7 +164,7 @@ def file_in_caps():
     """
     text_file = input("Enter the text file you want to use (try: 'Battles - Atlas'): ")
 
-    with open(text_file + ".txt", "r") as f:
+    with open(text_file + ".txt", "r", encoding="utf_8") as f:
         file_contents = f.read()
 
     print("".join(line.upper() for line in file_contents))
@@ -183,7 +187,7 @@ def rainfall_chart():
     London      *****
     Southampton ************
     """
-    with open("rainfall.txt", "r") as f:
+    with open("rainfall.txt", "r", encoding="utf_8") as f:
         file_contents = f.read().split("\n")
 
     for line in file_contents:
@@ -217,7 +221,7 @@ def graphical_rainfall_chart():
         "gray",
     ]
 
-    with open("rainfall.txt", "r") as f:
+    with open("rainfall.txt", "r", encoding="utf_8") as f:
         file_contents = f.read().split("\n")
 
     for i, line in enumerate(file_contents):
@@ -249,10 +253,10 @@ def rainfall_in_inches():
 
     Portsmouth 0.35
     """
-    with open("rainfall.txt", "r") as f:
+    with open("rainfall.txt", "r", encoding="utf_8") as f:
         file_contents = f.read().split("\n")
 
-    with open("rainfall_inches.txt", "w") as out_file:
+    with open("rainfall_inches.txt", "w", encoding="utf_8") as out_file:
         for line in file_contents:
             city, rainfall = line.split()
             print("{:<13} {:.2f}".format(city, int(rainfall) / 25.4), file=out_file)
@@ -266,7 +270,7 @@ def wc():
     """
     text_file = input("Enter the text file you want to use (try: 'quotation'): ") + ".txt"
 
-    with open(text_file, "r") as f:
+    with open(text_file, "r", encoding="utf_8") as f:
         file_contents = f.read()
 
     characters = file_contents.count("")
@@ -279,11 +283,22 @@ def wc():
     print("There are", lines, "lines in", text_file)
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = [value for _, value in locals().items() if callable(value) and value.__module__ == __name__]
+def main():
+    funcs = [
+        personal_greeting,
+        formal_name,
+        kilos_to_pounds,
+        generate_email,
+        grade_test,
+        graphic_letters,
+        sing_a_song,
+        exchange_table,
+        make_acronym,
+        name_to_number,
+        file_in_caps,
+        rainfall_chart,
+        graphical_rainfall_chart,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -296,11 +311,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -310,3 +325,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

@@ -4,7 +4,7 @@ from random import random
 
 from graphics import Circle, GraphWin, Line, Point
 
-from pract05 import distance_between_points
+from Pract05.pract05 import distance_between_points
 
 
 def main():

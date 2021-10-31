@@ -1,10 +1,14 @@
 """Practical Worksheet 6: If Statements and For Loops"""
+# pylint:disable=eval-used
 
+import os
 import random
+from inspect import cleandoc
+from tkinter import TclError
 
 from graphics import Circle, GraphWin, Line, Point, Polygon, Rectangle, Text
 
-from pract05 import distance_between_points
+from Pract05.pract05 import distance_between_points
 
 
 def fast_food_order_price():
@@ -18,7 +22,7 @@ def fast_food_order_price():
     price = float(input("Enter the price of the food order > "))
     if price < 10:
         price += 1.50
-    print("The total price of your order is £{:.2f}".format(price))
+    print("The total price of your order is £{price:.2f}")
 
 
 def what_to_do_today():
@@ -55,7 +59,7 @@ def display_square_roots(start=None, end=None):
         end = int(input("Enter a number larger than the previous > "))
 
     for i in range(start, end + 1):
-        print("The square root of {} is {:.3f}".format(i, i ** 0.5))
+        print(f"The square root of {i} is {i ** 0.5:.3f}")
 
 
 def calculate_grade(mark=None):
@@ -71,16 +75,17 @@ def calculate_grade(mark=None):
     if mark is None:
         mark = int(input("Enter a mark > "))
 
-    if mark > 20 or mark < 0:
-        return "X"
-    elif mark >= 16:
-        return "A"
-    elif mark >= 12:
-        return "B"
-    elif mark >= 8:
-        return "C"
-    else:
-        return "F"
+    grades = {
+        range(16, 21): "A",
+        range(12, 16): "B",
+        range(8, 12): "C",
+        range(8): "F",
+    }
+    for mark_range, grade in grades.items():
+        if mark in mark_range:
+            return grade
+
+    return "X"
 
 
 def peas_in_a_pod():
@@ -181,7 +186,7 @@ def eye_picker():
             colour = input("Enter the colour of the eye > ").lower()
             if colour in colours:
                 break
-        except Exception:
+        except TclError:
             print("Not a valid eye colour")
 
     win = GraphWin("Coloured eye")
@@ -294,18 +299,19 @@ def eyes_all_around():
     win.close()
 
 
-# constants
-GRADES = [
-    "amazing at this game",
-    "pretty good at this game",
-    "average at this game",
-    "below average at this game",
-    "awful at this game",
-]
+# archery_game constants
 WSD = 0.25  # wind start deviation
 WD = 0.1  # wind deviation after an arrow is shot
 WTH = 0.08  # wind threshold (determines wind direction threshold for the wind direction message)
-ARROWS = 5  # number of arrows to shoot
+ARROWS = 8  # number of arrows to shoot
+GRADES = {
+    9 * ARROWS: "amazing at this game",
+    8 * ARROWS: "pretty good at this game",
+    6 * ARROWS: "average at this game",
+    4 * ARROWS: "below average at this game",
+    2 * ARROWS: "bad at this game",
+    0: "terrible at this game",
+}
 
 
 def archery_game():
@@ -341,7 +347,6 @@ def archery_game():
     Hint: calculate distances() by first importing your pract05.py file and
     using the distance_between_points() function.
     """
-
     win, wind_text, zone_text, score_text, score = draw_gui()
     score = shoot_arrows(win, wind_text, zone_text, score_text, score)
     give_grade(wind_text, score_text, score)
@@ -357,7 +362,7 @@ def archery_game():
 
 
 def draw_gui():
-    """Helper function for creating the graphics window and drawing the target."""
+    """Create the graphics window and draw the target."""
     # create the window
     win = GraphWin("Archery game", 500, 500)
     win.setBackground("cyan")
@@ -402,9 +407,7 @@ def draw_gui():
 
 
 def shoot_arrows(win, wind_text, zone_text, score_text, score):
-    """Helper function that prompts the user to shoot arrows at the target by
-    left-clicking.
-    """
+    """Prompt user to shoot arrows at the target by left-clicking."""
     h_wind, v_wind = random.uniform(-WSD, WSD), random.uniform(-WSD, WSD)
 
     for _ in range(ARROWS):
@@ -457,21 +460,12 @@ def shoot_arrows(win, wind_text, zone_text, score_text, score):
 
 
 def give_grade(wind_text, score_text, score):
-    """Helper function for displaying what score and grade the user has
-    received.
-    """
-    if score > 220 / ARROWS:
-        grade = 0
-    elif score > 170 / ARROWS:
-        grade = 1
-    elif score > 120 / ARROWS:
-        grade = 2
-    elif score > 95 / ARROWS:
-        grade = 3
-    else:
-        grade = 4
+    """Display what score and grade the user has received."""
+    for grade, desc in GRADES.items():
+        if score >= grade:
+            grade_text = desc
+            break
 
-    grade_text = GRADES[grade]
     wind_text.setText(f"You scored {score}, meaning you're {grade_text}")
 
     score_text.setSize(10)
@@ -479,7 +473,7 @@ def give_grade(wind_text, score_text, score):
 
 
 def draw_arrow(win, arrow_x, arrow_y):
-    """Helper function that draws an arrow onto the given graphics window."""
+    """Draw an arrow onto the given graphics window."""
     arrow_shaft = Circle(Point(arrow_x, arrow_y), 0.008).draw(win)
     arrow_shaft.setFill("brown")
 
@@ -489,16 +483,21 @@ def draw_arrow(win, arrow_x, arrow_y):
         fletching.setFill("gray")
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = []
-    for value in list(locals().values()):
-        if callable(value) and value.__module__ == __name__:
-            if "Helper" not in value.__doc__ and "Example" not in value.__doc__:
-                funcs.append(value)
-
+def main():
+    funcs = [
+        fast_food_order_price,
+        what_to_do_today,
+        display_square_roots,
+        calculate_grade,
+        peas_in_a_pod,
+        ticket_price,
+        numbered_square,
+        eye_picker,
+        draw_patch_window,
+        draw_patchwork,
+        eyes_all_around,
+        archery_game,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -511,11 +510,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -529,3 +528,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,8 @@
 """Practical Worksheet 9: Using Lists"""
 
+import os
+from inspect import cleandoc
+
 from graphics import GraphWin, Polygon
 
 
@@ -132,16 +135,14 @@ def draw_bar_chart(numbers=None):
         print(" ".join(["#" if item > row_count else " " for item in numbers]))
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = []
-    for value in list(locals().values()):
-        if callable(value) and value.__module__ == __name__:
-            if "Helper" not in value.__doc__ and "Example" not in value.__doc__:
-                funcs.append(value)
-
+def main():
+    funcs = [
+        display_date,
+        word_lengths,
+        draw_hexagon,
+        test_marks,
+        draw_bar_chart,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -154,11 +155,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -172,3 +173,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()

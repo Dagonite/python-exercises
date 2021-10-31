@@ -1,11 +1,14 @@
 """Practical Worksheet 2: Working with Numeric Types"""
+# pylint:disable=eval-used
 # Slope of a line using two points it goes through:
-# • (y2 - y1) / (x2 - x1)
+# (y2 - y1) / (x2 - x1)
 
 # Distance between two points using Pythagoras' theorem:
-# • sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+# sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 import math
+import os
+from inspect import cleandoc
 
 
 def circumference_of_circle():
@@ -178,11 +181,18 @@ def select_coins():
         print(no_of_coin, "x", coin)
 
 
-if __name__ == "__main__":
-    from inspect import cleandoc
-    import os
-
-    funcs = [value for _, value in locals().items() if callable(value) and value.__module__ == __name__]
+def main():
+    funcs = [
+        circumference_of_circle,
+        area_of_circle,
+        cost_of_pizza,
+        slope_of_line,
+        distance_between_points,
+        travel_statistics,
+        sum_of_numbers,
+        average_of_numbers,
+        select_coins,
+    ]
     func_count = len(funcs)
 
     def print_func_names():
@@ -195,11 +205,11 @@ if __name__ == "__main__":
 
     while True:
         try:
-            ans = int(input(f"\nEnter the number of the function to demo (0 to quit) > "))
+            ans = int(input("\nEnter the number of the function to demo (0 to quit) > "))
             if ans == 0:
                 print("Goodbye!")
                 break
-            elif 0 < ans <= func_count:
+            if 0 < ans <= func_count:
                 os.system("cls" if os.name == "nt" else "clear")
                 func = funcs[ans - 1]
                 print(f"{'=' * 76}\n{cleandoc(func.__doc__)}\n{'=' * 76}\n")
@@ -209,3 +219,7 @@ if __name__ == "__main__":
                 raise ValueError("invalid: no such demo exists")
         except ValueError as error:
             print(error)
+
+
+if __name__ == "__main__":
+    main()
