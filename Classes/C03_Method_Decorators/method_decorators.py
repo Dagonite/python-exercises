@@ -1,3 +1,5 @@
+# pylint:disable=attribute-defined-outside-init
+
 import iso6346
 
 
@@ -31,6 +33,7 @@ class ShippingContainer:
         self.length_ft = length_ft
         self.contents = contents
         self.bic = self._make_bic_code(owner_code=owner_code, serial=ShippingContainer._generate_serial())
+        self.__dict__.update(kwargs)
 
     @property
     def volume_ft3(self):
