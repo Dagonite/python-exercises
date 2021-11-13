@@ -9,7 +9,6 @@ try:
 
 
 except ImportError:
-
     import sys
     import tty
     import termios
