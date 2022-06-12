@@ -6,4 +6,13 @@ BALLS = range(1, 60)
 chosen_balls = sample(BALLS, 6)
 chosen_balls.sort()
 
-print("Your chosen balls are:", " - ".join(map(str, chosen_balls)))
+print(*chosen_balls, sep=" - ")
+
+
+EM = range(1, 51)
+LS = range(1, 13)
+chosen_EM = sample(EM, 5)
+chosen_LS = sample(LS, 2)
+
+print(chosen_EM)
+print(chosen_LS)
