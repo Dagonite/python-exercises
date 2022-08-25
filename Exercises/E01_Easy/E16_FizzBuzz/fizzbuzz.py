@@ -1,17 +1,20 @@
 """Write a function that prints out FizzBuzz values 1 to 100."""
 
 
+PHRASES = {
+    3: "Fizz",
+    5: "Buzz",
+}
+
+
 def fizzbuzz():
-    for n in range(1, 101):
+    for num in range(1, 101):
         output = ""
+        for phrase_num, phrase in PHRASES.items():
+            if num % phrase_num == 0:
+                output += phrase
 
-        if n % 3 == 0:
-            output = "Fizz"
-
-        if n % 5 == 0:
-            output += "Buzz"
-
-        print(output or n)
+        print(output or num)
 
 
 fizzbuzz()
