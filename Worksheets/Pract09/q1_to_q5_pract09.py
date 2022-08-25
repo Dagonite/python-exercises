@@ -102,7 +102,7 @@ def test_marks():
         mark = input("Enter a mark ('q' to quit) > ").strip()
         if mark == "" or mark[0] == "q":
             break
-        elif mark.isdigit():
+        if mark.isdigit():
             mark = int(mark)
             if mark > 5:
                 print("Error: Input out of range")
